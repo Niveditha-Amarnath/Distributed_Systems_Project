@@ -62,3 +62,156 @@
 2026-06-09 10:34:52,813 [INFO] Producer –   Partition 1 (payment): 350
 2026-06-09 10:34:52,814 [INFO] Producer –   Partition 2 (order)  : 245
 2026-06-09 10:34:52,814 [INFO] Producer – ============================================================
+2026-06-09 12:12:54,132 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 12:15:09,519 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 12:15:09,588 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 12:15:09,590 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 12:15:09,600 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 12:15:09,602 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 12:15:09,602 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 12:15:10,214 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 1083)
+2026-06-09 12:15:10,789 [INFO] Producer – ✓ Delivered 200 messages (partition 0, offset 1290)
+2026-06-09 12:15:11,364 [INFO] Producer – ✓ Delivered 300 messages (partition 1, offset 1160)
+2026-06-09 12:15:11,938 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 1374)
+2026-06-09 12:15:12,548 [INFO] Producer – ✓ Delivered 500 messages (partition 1, offset 1225)
+2026-06-09 12:15:13,123 [INFO] Producer – ✓ Delivered 600 messages (partition 2, offset 883)
+2026-06-09 12:15:13,717 [INFO] Producer – ✓ Delivered 700 messages (partition 2, offset 905)
+2026-06-09 12:15:14,324 [INFO] Producer – ✓ Delivered 800 messages (partition 2, offset 930)
+2026-06-09 12:15:14,897 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 1359)
+2026-06-09 12:15:15,429 [INFO] Producer – Flushing remaining messages …
+2026-06-09 12:15:15,437 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 979)
+2026-06-09 12:15:15,455 [INFO] Producer – ============================================================
+2026-06-09 12:15:15,455 [INFO] Producer – Producer run complete.
+2026-06-09 12:15:15,456 [INFO] Producer –   Events generated  : 1000
+2026-06-09 12:15:15,456 [INFO] Producer –   Messages delivered: 1000
+2026-06-09 12:15:15,456 [INFO] Producer –   Messages failed   : 0
+2026-06-09 12:15:15,456 [INFO] Producer –   Total time        : 5.84 s
+2026-06-09 12:15:15,456 [INFO] Producer –   Overall throughput: 171.2 msg/s
+2026-06-09 12:15:15,456 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-09 12:15:15,456 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-09 12:15:15,456 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-09 12:15:15,456 [INFO] Producer – ============================================================
+2026-06-09 12:39:38,974 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 12:39:39,064 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 12:39:39,066 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 12:39:39,075 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 12:39:51,661 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 12:39:51,661 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 12:39:52,287 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 1433)
+2026-06-09 12:39:52,856 [INFO] Producer – ✓ Delivered 200 messages (partition 0, offset 1695)
+2026-06-09 12:39:53,442 [INFO] Producer – ✓ Delivered 300 messages (partition 1, offset 1510)
+2026-06-09 12:39:54,022 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 1779)
+2026-06-09 12:39:54,597 [INFO] Producer – ✓ Delivered 500 messages (partition 1, offset 1575)
+2026-06-09 12:39:55,216 [INFO] Producer – ✓ Delivered 600 messages (partition 2, offset 1128)
+2026-06-09 12:39:55,794 [INFO] Producer – ✓ Delivered 700 messages (partition 2, offset 1150)
+2026-06-09 12:39:56,384 [INFO] Producer – ✓ Delivered 800 messages (partition 2, offset 1175)
+2026-06-09 12:39:56,983 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 1709)
+2026-06-09 12:39:57,509 [INFO] Producer – Flushing remaining messages …
+2026-06-09 12:39:57,549 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 1224)
+2026-06-09 12:39:57,706 [INFO] Producer – ============================================================
+2026-06-09 12:39:57,708 [INFO] Producer – Producer run complete.
+2026-06-09 12:39:57,710 [INFO] Producer –   Events generated  : 1000
+2026-06-09 12:39:57,710 [INFO] Producer –   Messages delivered: 1000
+2026-06-09 12:39:57,711 [INFO] Producer –   Messages failed   : 0
+2026-06-09 12:39:57,711 [INFO] Producer –   Total time        : 6.02 s
+2026-06-09 12:39:57,712 [INFO] Producer –   Overall throughput: 166.0 msg/s
+2026-06-09 12:39:57,712 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-09 12:39:57,712 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-09 12:39:57,712 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-09 12:39:57,713 [INFO] Producer – ============================================================
+2026-06-09 12:52:58,991 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 12:52:59,057 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 12:52:59,058 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 12:52:59,066 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 12:53:08,117 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 12:53:08,117 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 12:53:08,740 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 1783)
+2026-06-09 12:53:09,337 [INFO] Producer – ✓ Delivered 200 messages (partition 0, offset 2100)
+2026-06-09 12:53:09,917 [INFO] Producer – ✓ Delivered 300 messages (partition 1, offset 1860)
+2026-06-09 12:53:10,501 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 2184)
+2026-06-09 12:53:11,077 [INFO] Producer – ✓ Delivered 500 messages (partition 1, offset 1925)
+2026-06-09 12:53:11,588 [INFO] Producer – ✓ Delivered 600 messages (partition 2, offset 1373)
+2026-06-09 12:53:12,246 [INFO] Producer – ✓ Delivered 700 messages (partition 2, offset 1395)
+2026-06-09 12:53:12,820 [INFO] Producer – ✓ Delivered 800 messages (partition 2, offset 1420)
+2026-06-09 12:53:13,390 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 2059)
+2026-06-09 12:53:13,899 [INFO] Producer – Flushing remaining messages …
+2026-06-09 12:53:13,940 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 1469)
+2026-06-09 12:53:13,967 [INFO] Producer – ============================================================
+2026-06-09 12:53:13,967 [INFO] Producer – Producer run complete.
+2026-06-09 12:53:13,967 [INFO] Producer –   Events generated  : 1000
+2026-06-09 12:53:13,968 [INFO] Producer –   Messages delivered: 1000
+2026-06-09 12:53:13,968 [INFO] Producer –   Messages failed   : 0
+2026-06-09 12:53:13,968 [INFO] Producer –   Total time        : 5.84 s
+2026-06-09 12:53:13,968 [INFO] Producer –   Overall throughput: 171.3 msg/s
+2026-06-09 12:53:13,968 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-09 12:53:13,968 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-09 12:53:13,968 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-09 12:53:13,969 [INFO] Producer – ============================================================
+2026-06-09 20:52:27,097 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 20:52:27,169 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 20:52:27,170 [INFO] Producer – Generating 5000 synthetic events …
+2026-06-09 20:52:27,217 [INFO] Producer – Event distribution: {'login': 2005, 'payment': 1734, 'order': 1261}
+2026-06-09 20:53:21,661 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 20:53:21,661 [INFO] Producer – Producing 5000 events to topic 'user-events' …
+2026-06-09 20:53:22,279 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 2135)
+2026-06-09 20:53:22,853 [INFO] Producer – ✓ Delivered 200 messages (partition 1, offset 2168)
+2026-06-09 20:53:23,432 [INFO] Producer – ✓ Delivered 300 messages (partition 2, offset 1545)
+2026-06-09 20:53:24,002 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 2593)
+2026-06-09 20:53:24,597 [INFO] Producer – ✓ Delivered 500 messages (partition 2, offset 1594)
+2026-06-09 20:53:25,188 [INFO] Producer – ✓ Delivered 600 messages (partition 0, offset 2681)
+2026-06-09 20:53:25,764 [INFO] Producer – ✓ Delivered 700 messages (partition 1, offset 2342)
+2026-06-09 20:53:26,360 [INFO] Producer – ✓ Delivered 800 messages (partition 1, offset 2374)
+2026-06-09 20:53:26,976 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 2407)
+2026-06-09 20:53:27,623 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 1720)
+2026-06-09 20:53:28,229 [INFO] Producer – ✓ Delivered 1100 messages (partition 2, offset 1747)
+2026-06-09 20:53:28,837 [INFO] Producer – ✓ Delivered 1200 messages (partition 2, offset 1772)
+2026-06-09 20:53:29,448 [INFO] Producer – ✓ Delivered 1300 messages (partition 0, offset 2974)
+2026-06-09 20:53:30,038 [INFO] Producer – ✓ Delivered 1400 messages (partition 0, offset 3013)
+2026-06-09 20:53:30,619 [INFO] Producer – ✓ Delivered 1500 messages (partition 0, offset 3050)
+2026-06-09 20:53:31,273 [INFO] Producer – ✓ Delivered 1600 messages (partition 2, offset 1868)
+2026-06-09 20:53:31,808 [INFO] Producer – ✓ Delivered 1700 messages (partition 2, offset 1895)
+2026-06-09 20:53:32,467 [INFO] Producer – ✓ Delivered 1800 messages (partition 2, offset 1910)
+2026-06-09 20:53:33,051 [INFO] Producer – ✓ Delivered 1900 messages (partition 1, offset 2745)
+2026-06-09 20:53:33,577 [INFO] Producer – ✓ Delivered 2000 messages (partition 1, offset 2776)
+2026-06-09 20:53:34,247 [INFO] Producer – ✓ Delivered 2100 messages (partition 1, offset 2812)
+2026-06-09 20:53:34,969 [INFO] Producer – ✓ Delivered 2200 messages (partition 2, offset 2006)
+2026-06-09 20:53:35,812 [INFO] Producer – ✓ Delivered 2300 messages (partition 2, offset 2022)
+2026-06-09 20:53:36,419 [INFO] Producer – ✓ Delivered 2400 messages (partition 0, offset 3418)
+2026-06-09 20:53:37,182 [INFO] Producer – ✓ Delivered 2500 messages (partition 1, offset 2964)
+2026-06-09 20:53:37,817 [INFO] Producer – ✓ Delivered 2600 messages (partition 0, offset 3493)
+2026-06-09 20:53:38,416 [INFO] Producer – ✓ Delivered 2700 messages (partition 0, offset 3533)
+2026-06-09 20:53:39,015 [INFO] Producer – ✓ Delivered 2800 messages (partition 0, offset 3575)
+2026-06-09 20:53:39,600 [INFO] Producer – ✓ Delivered 2900 messages (partition 0, offset 3610)
+2026-06-09 20:53:40,121 [INFO] Producer – ✓ Delivered 3000 messages (partition 1, offset 3124)
+2026-06-09 20:53:40,788 [INFO] Producer – ✓ Delivered 3100 messages (partition 0, offset 3691)
+2026-06-09 20:53:41,373 [INFO] Producer – ✓ Delivered 3200 messages (partition 0, offset 3728)
+2026-06-09 20:53:41,954 [INFO] Producer – ✓ Delivered 3300 messages (partition 0, offset 3760)
+2026-06-09 20:53:42,574 [INFO] Producer – ✓ Delivered 3400 messages (partition 1, offset 3264)
+2026-06-09 20:53:43,186 [INFO] Producer – ✓ Delivered 3500 messages (partition 1, offset 3298)
+2026-06-09 20:53:43,882 [INFO] Producer – ✓ Delivered 3600 messages (partition 0, offset 3881)
+2026-06-09 20:53:44,552 [INFO] Producer – ✓ Delivered 3700 messages (partition 1, offset 3369)
+2026-06-09 20:53:45,364 [INFO] Producer – ✓ Delivered 3800 messages (partition 0, offset 3968)
+2026-06-09 20:53:45,902 [INFO] Producer – ✓ Delivered 3900 messages (partition 1, offset 3434)
+2026-06-09 20:53:46,493 [INFO] Producer – ✓ Delivered 4000 messages (partition 0, offset 4052)
+2026-06-09 20:53:47,163 [INFO] Producer – ✓ Delivered 4100 messages (partition 1, offset 3497)
+2026-06-09 20:53:47,776 [INFO] Producer – ✓ Delivered 4200 messages (partition 2, offset 2534)
+2026-06-09 20:53:48,355 [INFO] Producer – ✓ Delivered 4300 messages (partition 0, offset 4166)
+2026-06-09 20:53:48,930 [INFO] Producer – ✓ Delivered 4400 messages (partition 2, offset 2592)
+2026-06-09 20:53:49,436 [INFO] Producer – ✓ Delivered 4500 messages (partition 0, offset 4239)
+2026-06-09 20:53:50,089 [INFO] Producer – ✓ Delivered 4600 messages (partition 0, offset 4278)
+2026-06-09 20:53:50,594 [INFO] Producer – ✓ Delivered 4700 messages (partition 2, offset 2654)
+2026-06-09 20:53:51,228 [INFO] Producer – ✓ Delivered 4800 messages (partition 0, offset 4338)
+2026-06-09 20:53:51,825 [INFO] Producer – ✓ Delivered 4900 messages (partition 2, offset 2710)
+2026-06-09 20:53:52,325 [INFO] Producer – Flushing remaining messages …
+2026-06-09 20:53:52,330 [INFO] Producer – ✓ Delivered 5000 messages (partition 2, offset 2730)
+2026-06-09 20:53:52,370 [INFO] Producer – ============================================================
+2026-06-09 20:53:52,371 [INFO] Producer – Producer run complete.
+2026-06-09 20:53:52,371 [INFO] Producer –   Events generated  : 5000
+2026-06-09 20:53:52,371 [INFO] Producer –   Messages delivered: 5000
+2026-06-09 20:53:52,371 [INFO] Producer –   Messages failed   : 0
+2026-06-09 20:53:52,371 [INFO] Producer –   Total time        : 30.69 s
+2026-06-09 20:53:52,372 [INFO] Producer –   Overall throughput: 162.9 msg/s
+2026-06-09 20:53:52,372 [INFO] Producer –   Partition 0 (login)  : 2005
+2026-06-09 20:53:52,372 [INFO] Producer –   Partition 1 (payment): 1734
+2026-06-09 20:53:52,372 [INFO] Producer –   Partition 2 (order)  : 1261
+2026-06-09 20:53:52,372 [INFO] Producer – ============================================================

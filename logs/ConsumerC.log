@@ -40,3 +40,56 @@ PermissionError: [WinError 32] The process cannot access the file because it is 
 2026-06-09 10:30:27,573 [ConsumerC] INFO – Throughput: 43.4 msg/s | Total consumed: 219
 2026-06-09 10:34:46,830 [ConsumerC] INFO – Throughput: 0.1 msg/s | Total consumed: 246
 2026-06-09 10:34:51,853 [ConsumerC] INFO – Throughput: 41.1 msg/s | Total consumed: 452
+2026-06-09 12:07:48,786 [ConsumerC] INFO – Health monitor started (PID 2900).
+2026-06-09 12:07:48,789 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-09 12:07:48,794 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-09 12:14:50,773 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 12:14:50,842 [ConsumerC] ERROR – Unhandled exception in poll loop: 'MetricsManager' object has no attribute 'add_live_event'
+Traceback (most recent call last):
+  File "D:\DS\kafka-partitioner\consumer.py", line 354, in run_consumer
+    mm.add_live_event(
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'MetricsManager' object has no attribute 'add_live_event'
+2026-06-09 12:14:50,871 [ConsumerC] INFO – Committing final offsets …
+2026-06-09 12:14:50,889 [ConsumerC] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 12:14:50,889 [ConsumerC] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 12:14:50,921 [ConsumerC] INFO – Consumer closed.
+2026-06-09 12:14:50,934 [ConsumerC] INFO – ─── ConsumerC shut down. Total consumed: 1 ───
+2026-06-09 12:15:07,339 [ConsumerC] INFO – Health monitor started (PID 8228).
+2026-06-09 12:15:07,348 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-09 12:15:07,353 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-09 12:15:08,629 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 12:15:12,367 [ConsumerC] INFO – Throughput: 17.4 msg/s | Total consumed: 87
+2026-06-09 12:39:51,733 [ConsumerC] INFO – Throughput: 0.1 msg/s | Total consumed: 246
+2026-06-09 12:39:56,751 [ConsumerC] INFO – Throughput: 19.9 msg/s | Total consumed: 346
+2026-06-09 12:40:01,780 [ConsumerC] INFO – Throughput: 15.5 msg/s | Total consumed: 424
+2026-06-09 12:53:08,184 [ConsumerC] INFO – Throughput: 0.1 msg/s | Total consumed: 491
+2026-06-09 12:53:13,193 [ConsumerC] INFO – Throughput: 26.0 msg/s | Total consumed: 621
+2026-06-09 20:52:25,157 [ConsumerC] INFO – Health monitor started (PID 24148).
+2026-06-09 20:52:25,171 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-09 20:52:25,180 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-09 20:52:28,529 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 20:53:21,747 [ConsumerC] INFO – Throughput: 0.0 msg/s | Total consumed: 1
+2026-06-09 20:53:26,807 [ConsumerC] INFO – Throughput: 6.5 msg/s | Total consumed: 34
+2026-06-09 20:53:31,840 [ConsumerC] INFO – Throughput: 6.0 msg/s | Total consumed: 64
+2026-06-09 20:53:36,875 [ConsumerC] INFO – Throughput: 5.8 msg/s | Total consumed: 93
+2026-06-09 20:53:42,071 [ConsumerC] INFO – Throughput: 6.2 msg/s | Total consumed: 125
+2026-06-09 20:53:47,109 [ConsumerC] INFO – Throughput: 6.0 msg/s | Total consumed: 155
+2026-06-09 20:53:52,250 [ConsumerC] INFO – Throughput: 7.6 msg/s | Total consumed: 194
+2026-06-09 20:53:57,352 [ConsumerC] INFO – Throughput: 7.8 msg/s | Total consumed: 234
+2026-06-09 20:54:02,456 [ConsumerC] INFO – Throughput: 7.5 msg/s | Total consumed: 272
+2026-06-09 20:54:07,497 [ConsumerC] INFO – Throughput: 10.9 msg/s | Total consumed: 327
+2026-06-09 20:54:12,661 [ConsumerC] INFO – Throughput: 7.8 msg/s | Total consumed: 367
+2026-06-09 20:54:17,877 [ConsumerC] INFO – Throughput: 9.0 msg/s | Total consumed: 414
+2026-06-09 20:54:22,968 [ConsumerC] INFO – Throughput: 8.8 msg/s | Total consumed: 459
+2026-06-09 20:54:28,024 [ConsumerC] INFO – Throughput: 6.1 msg/s | Total consumed: 490
+2026-06-09 20:54:33,542 [ConsumerC] INFO – Throughput: 6.2 msg/s | Total consumed: 524
+2026-06-09 20:54:36,290 [ConsumerC] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 20:54:36,295 [ConsumerC] INFO – Offsets committed before revocation.
+2026-06-09 20:54:36,312 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 20:54:37,530 [ConsumerC] INFO – 🛑 Consumer ConsumerC disabled via control file. Shutting down...
+2026-06-09 20:54:37,544 [ConsumerC] INFO – Committing final offsets …
+2026-06-09 20:54:37,548 [ConsumerC] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 20:54:37,548 [ConsumerC] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 20:54:37,578 [ConsumerC] INFO – Consumer closed.
+2026-06-09 20:54:37,595 [ConsumerC] INFO – ─── ConsumerC shut down. Total consumed: 550 ───

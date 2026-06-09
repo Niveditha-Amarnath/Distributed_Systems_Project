@@ -10,6 +10,8 @@ Kafka consumer that:
   4. Monitors its own process with psutil (CPU, memory, PID, uptime).
   5. Calculates per-consumer throughput (msg/s) and writes samples.
   6. Persists all metrics via MetricsManager.
+  7. Records event type statistics for analytics.
+  8. Supports remote shutdown via consumer_control.json (failure simulation).
 
 Run three instances in separate terminals:
   python consumer.py --name ConsumerA
@@ -81,6 +83,7 @@ DEFAULT_TOPIC      = "user-events"
 DEFAULT_GROUP      = "user-events-group"
 HEALTH_INTERVAL    = 3.0   # seconds between health updates
 THROUGHPUT_WINDOW  = 5.0   # seconds for rolling throughput calculation
+CONTROL_CHECK_INTERVAL = 50  # Check control file every N messages
 
 
 # ---------------------------------------------------------------------------
@@ -316,6 +319,17 @@ def run_consumer(
 
     try:
         while _running[0]:
+            # Check consumer control periodically (failure simulation)
+            if total_consumed % CONTROL_CHECK_INTERVAL == 0:
+                if not mm.is_consumer_enabled(consumer_name):
+                    log.info(f"🛑 Consumer {consumer_name} disabled via control file. Shutting down...")
+                    mm.append_rebalance_event(
+                        consumer_name=consumer_name,
+                        event_type="stopped",
+                        detail=f"Consumer {consumer_name} stopped via control file"
+                    )
+                    break
+            
             msg = consumer.poll(timeout=poll_timeout)
 
             if msg is None:
@@ -345,11 +359,35 @@ def run_consumer(
             total_consumed += 1
             window_count   += 1
 
+            event_type = payload.get("type", "unknown")
+            event_id = payload.get("event_id", "")
+            
             log.debug(
                 "[P%d | off:%d] event_id=%s type=%s",
                 msg.partition(), msg.offset(),
-                payload.get("event_id"), payload.get("type"),
+                event_id, event_type,
             )
+            
+            # Record live event for dashboard
+            mm.add_live_event(
+                event_type=event_type,
+                partition=msg.partition(),
+                consumer_name=consumer_name,
+                message_key=str(event_id)
+            )
+                        # Record live event for dashboard
+            mm.add_live_event(
+                event_type=payload.get("type", "unknown"),
+                partition=msg.partition(),
+                consumer_name=consumer_name,
+                message_key=str(payload.get("event_id", ""))
+            )
+            
+            # Record event type for analytics
+            mm.increment_event_type(payload.get("type", "unknown"))
+            
+            # Record event type for analytics
+            mm.increment_event_type(event_type)
 
             # Periodic commit
             if total_consumed % auto_commit_every == 0:

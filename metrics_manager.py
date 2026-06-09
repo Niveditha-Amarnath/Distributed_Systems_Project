@@ -15,6 +15,9 @@ rebalance_history.json      – ordered list of rebalance events
 throughput.json             – per-consumer msg/s time-series samples
 {name}_health.json          – CPU / memory / PID snapshot (one per consumer)
 producer_stats.json         – producer throughput samples
+live_events.json            – real-time event stream
+event_type_stats.json       – event type counters (login/payment/order)
+consumer_control.json       – consumer start/stop control flags
 """
 
 from __future__ import annotations
@@ -80,6 +83,8 @@ def _read_json(path: Path) -> Any:
         return []
 
     return {}
+
+
 def _write_json(path: Path, data: Any) -> None:
     """
     Atomic write with unique temp file.
@@ -105,6 +110,8 @@ def _write_json(path: Path, data: Any) -> None:
             time.sleep(0.1)
 
     print(f"[MetricsManager] Failed writing {path}")
+
+
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -133,6 +140,9 @@ class MetricsManager:
         self.rebalance_history_path   = self.metrics_dir / "rebalance_history.json"
         self.throughput_path          = self.metrics_dir / "throughput.json"
         self.producer_stats_path      = self.metrics_dir / "producer_stats.json"
+        self.live_events_path         = self.metrics_dir / "live_events.json"
+        self.event_type_stats_path    = self.metrics_dir / "event_type_stats.json"
+        self.consumer_control_path    = self.metrics_dir / "consumer_control.json"
 
         # Ensure base structures exist on first use
         self._init_files()
@@ -149,6 +159,13 @@ class MetricsManager:
             self.rebalance_history_path   : [],
             self.throughput_path          : {},
             self.producer_stats_path      : {"samples": [], "total_sent": 0},
+            self.live_events_path         : [],
+            self.event_type_stats_path    : {"login": 0, "payment": 0, "order": 0},
+            self.consumer_control_path    : {
+                "ConsumerA": True,
+                "ConsumerB": True,
+                "ConsumerC": True
+            },
         }
         for path, default in defaults.items():
             if not path.exists():
@@ -334,6 +351,150 @@ class MetricsManager:
         return _read_json(self.producer_stats_path) or {"samples": [], "total_sent": 0}
 
     # ------------------------------------------------------------------
+    # Live Event Stream
+    # ------------------------------------------------------------------
+
+    def add_live_event(
+        self,
+        event_type: str,
+        partition: int,
+        consumer_name: str,
+        message_key: str = ""
+    ) -> None:
+
+        path = self.live_events_path
+        lock = _get_lock(str(path))
+
+        with lock:
+            events = _read_json(path) or []
+
+            events.append(
+                {
+                    "ts": _now_iso(),
+                    "event_type": event_type,
+                    "partition": partition,
+                    "consumer": consumer_name,
+                    "key": message_key,
+                }
+            )
+
+            if len(events) > 50:
+                events = events[-50:]
+
+            _write_json(path, events)
+
+    def get_live_events(self):
+        return _read_json(self.live_events_path) or []
+
+    def clear_live_events(self):
+        lock = _get_lock(str(self.live_events_path))
+
+        with lock:
+            _write_json(self.live_events_path, [])
+
+    # ------------------------------------------------------------------
+    # Event Type Analytics
+    # ------------------------------------------------------------------
+
+    def increment_event_type(self, event_type: str) -> None:
+        """
+        Increment the counter for a specific event type.
+        
+        Parameters
+        ----------
+        event_type : str
+            Type of event (login, payment, order)
+        """
+        path = self.event_type_stats_path
+        lock = _get_lock(str(path))
+        
+        with lock:
+            data = _read_json(path) or {"login": 0, "payment": 0, "order": 0}
+            
+            # Normalize event type
+            event_type = str(event_type).lower()
+            
+            # Initialize if not exists
+            if event_type not in data:
+                data[event_type] = 0
+            
+            data[event_type] += 1
+            _write_json(path, data)
+    
+    def get_event_type_stats(self) -> Dict[str, int]:
+        """
+        Get current event type statistics.
+        
+        Returns
+        -------
+        Dictionary with event types as keys and counts as values
+        """
+        return _read_json(self.event_type_stats_path) or {"login": 0, "payment": 0, "order": 0}
+    
+    def reset_event_type_stats(self) -> None:
+        """Reset event type statistics to zero."""
+        path = self.event_type_stats_path
+        lock = _get_lock(str(path))
+        with lock:
+            _write_json(path, {"login": 0, "payment": 0, "order": 0})
+
+    # ------------------------------------------------------------------
+    # Consumer Control (Failure Simulation)
+    # ------------------------------------------------------------------
+
+    def set_consumer_enabled(self, consumer_name: str, enabled: bool) -> None:
+        """
+        Set whether a consumer should be running or stopped.
+        
+        Parameters
+        ----------
+        consumer_name : str
+            Name of the consumer (ConsumerA, ConsumerB, ConsumerC)
+        enabled : bool
+            True to run, False to stop
+        """
+        path = self.consumer_control_path
+        lock = _get_lock(str(path))
+        
+        with lock:
+            data = _read_json(path) or {
+                "ConsumerA": True,
+                "ConsumerB": True,
+                "ConsumerC": True
+            }
+            data[consumer_name] = enabled
+            _write_json(path, data)
+    
+    def is_consumer_enabled(self, consumer_name: str) -> bool:
+        """
+        Check if a consumer should be running.
+        
+        Parameters
+        ----------
+        consumer_name : str
+            Name of the consumer
+            
+        Returns
+        -------
+        True if consumer should run, False otherwise
+        """
+        path = self.consumer_control_path
+        data = _read_json(path) or {
+            "ConsumerA": True,
+            "ConsumerB": True,
+            "ConsumerC": True
+        }
+        return data.get(consumer_name, True)
+    
+    def get_all_consumer_controls(self) -> Dict[str, bool]:
+        """Get the enabled/disabled status for all consumers."""
+        return _read_json(self.consumer_control_path) or {
+            "ConsumerA": True,
+            "ConsumerB": True,
+            "ConsumerC": True
+        }
+
+    # ------------------------------------------------------------------
     # Global reset
     # ------------------------------------------------------------------
 
@@ -356,6 +517,25 @@ class MetricsManager:
         lock = _get_lock(str(self.producer_stats_path))
         with lock:
             _write_json(self.producer_stats_path, {"samples": [], "total_sent": 0})
+
+        # Clear live events
+        lock = _get_lock(str(self.live_events_path))
+        with lock:
+            _write_json(self.live_events_path, [])
+        
+        # Reset event type stats
+        lock = _get_lock(str(self.event_type_stats_path))
+        with lock:
+            _write_json(self.event_type_stats_path, {"login": 0, "payment": 0, "order": 0})
+        
+        # Reset consumer controls (all enabled)
+        lock = _get_lock(str(self.consumer_control_path))
+        with lock:
+            _write_json(self.consumer_control_path, {
+                "ConsumerA": True,
+                "ConsumerB": True,
+                "ConsumerC": True
+            })
 
         # Remove health files
         for fname in self.metrics_dir.glob("*_health.json"):

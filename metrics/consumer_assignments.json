@@ -1,1 +1,20 @@
-{}
+{
+  "ConsumerB": {
+    "partitions": [],
+    "assigned_at": "2026-06-09T15:24:38.108512+00:00",
+    "status": "offline",
+    "offline_at": "2026-06-09T15:24:38.138720+00:00"
+  },
+  "ConsumerA": {
+    "partitions": [],
+    "assigned_at": "2026-06-09T15:24:34.237171+00:00",
+    "status": "offline",
+    "offline_at": "2026-06-09T15:24:34.296247+00:00"
+  },
+  "ConsumerC": {
+    "partitions": [],
+    "assigned_at": "2026-06-09T15:24:37.559511+00:00",
+    "status": "offline",
+    "offline_at": "2026-06-09T15:24:37.590644+00:00"
+  }
+}

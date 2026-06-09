@@ -101,3 +101,65 @@ PermissionError: [WinError 32] The process cannot access the file because it is 
 2026-06-09 10:30:27,542 [ConsumerA] INFO – Throughput: 70.7 msg/s | Total consumed: 356
 2026-06-09 10:34:46,831 [ConsumerA] INFO – Throughput: 0.2 msg/s | Total consumed: 406
 2026-06-09 10:34:51,921 [ConsumerA] INFO – Throughput: 68.3 msg/s | Total consumed: 753
+2026-06-09 12:07:19,419 [ConsumerA] INFO – Health monitor started (PID 17320).
+2026-06-09 12:07:19,422 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-09 12:07:19,455 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-09 12:14:50,772 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0]
+2026-06-09 12:14:50,896 [ConsumerA] ERROR – Unhandled exception in poll loop: 'MetricsManager' object has no attribute 'add_live_event'
+Traceback (most recent call last):
+  File "D:\DS\kafka-partitioner\consumer.py", line 354, in run_consumer
+    mm.add_live_event(
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'MetricsManager' object has no attribute 'add_live_event'
+2026-06-09 12:14:50,911 [ConsumerA] INFO – Committing final offsets …
+2026-06-09 12:14:50,921 [ConsumerA] INFO – ✘ Partition REVOKED   → [0]
+2026-06-09 12:14:50,921 [ConsumerA] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 12:14:50,952 [ConsumerA] INFO – Consumer closed.
+2026-06-09 12:14:50,965 [ConsumerA] INFO – ─── ConsumerA shut down. Total consumed: 1 ───
+2026-06-09 12:15:02,323 [ConsumerA] INFO – Health monitor started (PID 19112).
+2026-06-09 12:15:02,326 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-09 12:15:02,330 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-09 12:15:05,423 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0, 1]
+2026-06-09 12:15:08,511 [ConsumerA] INFO – ✘ Partition REVOKED   → [0, 1]
+2026-06-09 12:15:08,516 [ConsumerA] INFO – Offsets committed before revocation.
+2026-06-09 12:15:08,632 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0]
+2026-06-09 12:15:09,700 [ConsumerA] INFO – Throughput: 1.2 msg/s | Total consumed: 9
+2026-06-09 12:15:14,716 [ConsumerA] INFO – Throughput: 20.6 msg/s | Total consumed: 112
+2026-06-09 12:15:19,799 [ConsumerA] INFO – Throughput: 20.7 msg/s | Total consumed: 217
+2026-06-09 12:39:51,731 [ConsumerA] INFO – Throughput: 0.1 msg/s | Total consumed: 414
+2026-06-09 12:39:57,108 [ConsumerA] INFO – Throughput: 17.6 msg/s | Total consumed: 508
+2026-06-09 12:40:02,453 [ConsumerA] INFO – Throughput: 12.6 msg/s | Total consumed: 575
+2026-06-09 12:40:07,460 [ConsumerA] INFO – Throughput: 24.8 msg/s | Total consumed: 699
+2026-06-09 12:53:08,183 [ConsumerA] INFO – Throughput: 0.2 msg/s | Total consumed: 819
+2026-06-09 12:53:13,460 [ConsumerA] INFO – Throughput: 21.8 msg/s | Total consumed: 934
+2026-06-09 12:53:18,619 [ConsumerA] INFO – Throughput: 12.8 msg/s | Total consumed: 1000
+2026-06-09 20:52:21,442 [ConsumerA] INFO – Health monitor started (PID 22980).
+2026-06-09 20:52:21,444 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-09 20:52:21,477 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-09 20:52:24,616 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0, 1]
+2026-06-09 20:52:26,997 [ConsumerA] INFO – Throughput: 5.6 msg/s | Total consumed: 31
+2026-06-09 20:52:28,463 [ConsumerA] INFO – ✘ Partition REVOKED   → [0, 1]
+2026-06-09 20:52:28,468 [ConsumerA] INFO – Offsets committed before revocation.
+2026-06-09 20:52:28,530 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0]
+2026-06-09 20:53:21,949 [ConsumerA] INFO – Throughput: 0.3 msg/s | Total consumed: 46
+2026-06-09 20:53:27,415 [ConsumerA] INFO – Throughput: 6.2 msg/s | Total consumed: 80
+2026-06-09 20:53:32,457 [ConsumerA] INFO – Throughput: 5.4 msg/s | Total consumed: 107
+2026-06-09 20:53:37,993 [ConsumerA] INFO – Throughput: 4.9 msg/s | Total consumed: 134
+2026-06-09 20:53:43,117 [ConsumerA] INFO – Throughput: 6.2 msg/s | Total consumed: 166
+2026-06-09 20:53:48,165 [ConsumerA] INFO – Throughput: 5.8 msg/s | Total consumed: 195
+2026-06-09 20:53:53,226 [ConsumerA] INFO – Throughput: 8.5 msg/s | Total consumed: 238
+2026-06-09 20:53:58,310 [ConsumerA] INFO – Throughput: 7.1 msg/s | Total consumed: 274
+2026-06-09 20:54:03,492 [ConsumerA] INFO – Throughput: 8.9 msg/s | Total consumed: 320
+2026-06-09 20:54:08,829 [ConsumerA] INFO – Throughput: 6.6 msg/s | Total consumed: 355
+2026-06-09 20:54:13,848 [ConsumerA] INFO – Throughput: 7.0 msg/s | Total consumed: 390
+2026-06-09 20:54:18,879 [ConsumerA] INFO – Throughput: 4.6 msg/s | Total consumed: 413
+2026-06-09 20:54:23,979 [ConsumerA] INFO – Throughput: 5.3 msg/s | Total consumed: 440
+2026-06-09 20:54:29,083 [ConsumerA] INFO – Throughput: 4.3 msg/s | Total consumed: 462
+2026-06-09 20:54:34,118 [ConsumerA] INFO – Throughput: 7.2 msg/s | Total consumed: 498
+2026-06-09 20:54:34,229 [ConsumerA] INFO – 🛑 Consumer ConsumerA disabled via control file. Shutting down...
+2026-06-09 20:54:34,232 [ConsumerA] INFO – Committing final offsets …
+2026-06-09 20:54:34,232 [ConsumerA] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 20:54:34,235 [ConsumerA] INFO – ✘ Partition REVOKED   → [0]
+2026-06-09 20:54:34,235 [ConsumerA] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 20:54:34,276 [ConsumerA] INFO – Consumer closed.
+2026-06-09 20:54:34,300 [ConsumerA] INFO – ─── ConsumerA shut down. Total consumed: 500 ───

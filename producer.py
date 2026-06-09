@@ -3,8 +3,7 @@ producer.py
 ===========
 Kafka producer that:
   1. Auto-creates the ``user-events`` topic (3 partitions, RF 1).
-  2. Generates 1 000 (configurable) synthetic JSON events via
-     event_generator.py.
+  2. Generates synthetic JSON events via event_generator.py.
   3. Routes every message to the correct partition using a custom
      content-type partitioner:
        login   → partition 0
@@ -12,6 +11,7 @@ Kafka producer that:
        order   → partition 2
   4. Persists per-partition counters and throughput samples to the
      metrics/ directory via MetricsManager.
+  5. Records event type statistics.
 
 Usage
 -----
@@ -129,36 +129,49 @@ def ensure_topic(
     topic            : str,
     num_partitions   : int = 3,
     replication      : int = 1,
+    max_retries      : int = 5,
 ) -> None:
     """
     Create the Kafka topic if it does not already exist.
-    Safe to call even when the topic is already present.
+    Includes retry logic for starting Kafka.
     """
     admin = AdminClient({"bootstrap.servers": bootstrap_servers})
-
-    # Check existing topics
-    existing = admin.list_topics(timeout=10).topics
-    if topic in existing:
-        log.info("Topic '%s' already exists – skipping creation.", topic)
-        return
-
-    log.info(
-        "Creating topic '%s' (partitions=%d, replication=%d) …",
-        topic, num_partitions, replication,
-    )
-    new_topic = NewTopic(
-        topic,
-        num_partitions=num_partitions,
-        replication_factor=replication,
-    )
-    futures = admin.create_topics([new_topic])
-    for t, future in futures.items():
+    
+    # Retry logic for connection
+    for attempt in range(max_retries):
         try:
-            future.result()
-            log.info("Topic '%s' created successfully.", t)
-        except Exception as exc:
-            log.error("Failed to create topic '%s': %s", t, exc)
-            raise
+            # Check existing topics
+            existing = admin.list_topics(timeout=10).topics
+            if topic in existing:
+                log.info("Topic '%s' already exists – skipping creation.", topic)
+                return
+            
+            log.info(
+                "Creating topic '%s' (partitions=%d, replication=%d) …",
+                topic, num_partitions, replication,
+            )
+            new_topic = NewTopic(
+                topic,
+                num_partitions=num_partitions,
+                replication_factor=replication,
+            )
+            futures = admin.create_topics([new_topic])
+            for t, future in futures.items():
+                try:
+                    future.result()
+                    log.info("Topic '%s' created successfully.", t)
+                    return
+                except Exception as exc:
+                    log.error("Failed to create topic '%s': %s", t, exc)
+                    raise
+        except Exception as e:
+            if "Broker transport failure" in str(e) and attempt < max_retries - 1:
+                log.warning(f"Connection attempt {attempt + 1} failed. Retrying in 5 seconds...")
+                time.sleep(5)
+            else:
+                log.error(f"Failed to connect to Kafka after {max_retries} attempts")
+                log.error("Make sure Kafka is running: docker-compose up -d")
+                raise
 
 
 # ---------------------------------------------------------------------------
@@ -220,11 +233,15 @@ def run_producer(
     events = generate_events(num_events, seed=seed)
     dist   = get_type_distribution(events)
     log.info("Event distribution: %s", dist)
+    
+    # Also record initial event type stats
+    for event_type, count in dist.items():
+        for _ in range(count):
+            mm.increment_event_type(event_type)
 
     # ── Step 3: Producer configuration ───────────────────────────────────
     producer_conf = {
         "bootstrap.servers"        : bootstrap_servers,
-       
         # Reliability: wait for leader + 1 replica acknowledgement
         "acks"                     : "all",
         # Retry on transient errors
@@ -243,7 +260,6 @@ def run_producer(
     log.info("Producer connected to %s", bootstrap_servers)
 
     # ── Step 4: Produce ───────────────────────────────────────────────────
-    # ── Step 4: Produce ───────────────────────────────────────────────────
     partition_counts: Dict[str, int] = {"0": 0, "1": 0, "2": 0}
     start_time = time.monotonic()
     last_sample = start_time
@@ -259,15 +275,16 @@ def run_producer(
 
     for idx, event in enumerate(events):
         event_type = event["type"]
-
         partition = partition_map.get(event_type, 0)
 
+        # Produce message with partition explicitly set
         producer.produce(
-    topic=topic,
-    key=str(event.get("event_id", idx)),
-    value=json.dumps(event),
-    partition=partition
-)
+            topic=topic,
+            key=event_type,  # This will be used by the partitioner
+            value=json.dumps(event),
+            partition=partition,
+            callback=delivery_callback
+        )
 
         # Track partition counts
         partition_counts[str(partition)] += 1
