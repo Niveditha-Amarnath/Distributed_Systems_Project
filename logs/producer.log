@@ -1,0 +1,64 @@
+2026-06-09 10:05:35,163 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 10:05:35,238 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 10:05:35,240 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 10:05:35,255 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 10:22:13,507 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 10:22:13,597 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 10:22:13,598 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 10:22:13,607 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 10:22:13,608 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 10:22:13,609 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 10:23:09,088 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 10:23:09,163 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 10:23:09,164 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 10:23:09,173 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 10:23:09,173 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 10:23:09,173 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 10:23:14,924 [INFO] Producer – Flushing remaining messages …
+2026-06-09 10:23:14,993 [INFO] Producer – ============================================================
+2026-06-09 10:23:14,993 [INFO] Producer – Producer run complete.
+2026-06-09 10:23:14,994 [INFO] Producer –   Events generated  : 1000
+2026-06-09 10:23:14,994 [INFO] Producer –   Messages delivered: 0
+2026-06-09 10:23:14,994 [INFO] Producer –   Messages failed   : 0
+2026-06-09 10:23:14,995 [INFO] Producer –   Total time        : 5.80 s
+2026-06-09 10:23:14,995 [INFO] Producer –   Overall throughput: 172.3 msg/s
+2026-06-09 10:23:14,995 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-09 10:23:14,996 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-09 10:23:14,996 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-09 10:23:14,996 [INFO] Producer – ============================================================
+2026-06-09 10:30:22,464 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 10:30:22,479 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 10:30:22,493 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 10:30:22,501 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 10:30:22,502 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 10:30:22,502 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 10:30:28,247 [INFO] Producer – Flushing remaining messages …
+2026-06-09 10:30:28,276 [INFO] Producer – ============================================================
+2026-06-09 10:30:28,276 [INFO] Producer – Producer run complete.
+2026-06-09 10:30:28,277 [INFO] Producer –   Events generated  : 1000
+2026-06-09 10:30:28,277 [INFO] Producer –   Messages delivered: 0
+2026-06-09 10:30:28,277 [INFO] Producer –   Messages failed   : 0
+2026-06-09 10:30:28,277 [INFO] Producer –   Total time        : 5.76 s
+2026-06-09 10:30:28,278 [INFO] Producer –   Overall throughput: 173.7 msg/s
+2026-06-09 10:30:28,278 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-09 10:30:28,278 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-09 10:30:28,278 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-09 10:30:28,279 [INFO] Producer – ============================================================
+2026-06-09 10:34:46,713 [INFO] Producer – Metrics reset for new producer run.
+2026-06-09 10:34:46,780 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-09 10:34:46,781 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-09 10:34:46,791 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-09 10:34:46,792 [INFO] Producer – Producer connected to localhost:9092
+2026-06-09 10:34:46,792 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-09 10:34:52,784 [INFO] Producer – Flushing remaining messages …
+2026-06-09 10:34:52,812 [INFO] Producer – ============================================================
+2026-06-09 10:34:52,812 [INFO] Producer – Producer run complete.
+2026-06-09 10:34:52,812 [INFO] Producer –   Events generated  : 1000
+2026-06-09 10:34:52,812 [INFO] Producer –   Messages delivered: 0
+2026-06-09 10:34:52,812 [INFO] Producer –   Messages failed   : 0
+2026-06-09 10:34:52,813 [INFO] Producer –   Total time        : 6.00 s
+2026-06-09 10:34:52,813 [INFO] Producer –   Overall throughput: 166.6 msg/s
+2026-06-09 10:34:52,813 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-09 10:34:52,813 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-09 10:34:52,814 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-09 10:34:52,814 [INFO] Producer – ============================================================

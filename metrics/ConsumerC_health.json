@@ -1,0 +1,11 @@
+{
+  "consumer": "ConsumerC",
+  "pid": 8560,
+  "status": "running",
+  "uptime_s": 352.9,
+  "cpu_percent": 0.0,
+  "memory_mb": 29.74,
+  "memory_percent": 0.19,
+  "num_threads": 8,
+  "last_updated": "2026-06-09T05:05:28.279670+00:00"
+}

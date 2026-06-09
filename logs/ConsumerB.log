@@ -1,0 +1,104 @@
+2026-06-09 10:03:35,956 [ConsumerB] INFO – Health monitor started (PID 10752).
+2026-06-09 10:03:35,958 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-09 10:03:35,962 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:03:36,961 [ConsumerB] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 10:04:16,367 [ConsumerB] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 10:04:16,367 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:04:16,524 [ConsumerB] INFO – ★ Partition ASSIGNED  → [1]
+2026-06-09 10:04:16,658 [ConsumerB] ERROR – Unhandled exception in poll loop: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.tmp' -> 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.json'
+Traceback (most recent call last):
+  File "D:\DS\kafka-partitioner\consumer.py", line 319, in run_consumer
+    msg = consumer.poll(timeout=poll_timeout)
+  File "D:\DS\kafka-partitioner\consumer.py", line 189, in on_assign
+    mm.append_rebalance_event(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        consumer_name = consumer_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        detail        = f"Assigned {len(assigned)} partition(s) after rebalance",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\DS\kafka-partitioner\metrics_manager.py", line 211, in append_rebalance_event
+    _write_json(path, history)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\DS\kafka-partitioner\metrics_manager.py", line 63, in _write_json
+    tmp.replace(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1096, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.tmp' -> 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.json'
+2026-06-09 10:04:16,700 [ConsumerB] INFO – Committing final offsets …
+2026-06-09 10:04:16,701 [ConsumerB] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:04:16,701 [ConsumerB] INFO – ✘ Partition REVOKED   → [1]
+2026-06-09 10:04:16,702 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:04:16,731 [ConsumerB] INFO – Consumer closed.
+2026-06-09 10:08:56,872 [ConsumerB] INFO – Health monitor started (PID 14708).
+2026-06-09 10:08:56,874 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-09 10:08:56,878 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:08:58,598 [ConsumerB] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 10:09:42,457 [ConsumerB] INFO – Shutdown signal received – stopping consumer …
+2026-06-09 10:09:42,658 [ConsumerB] INFO – Committing final offsets …
+2026-06-09 10:09:42,659 [ConsumerB] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:09:42,659 [ConsumerB] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 10:09:42,659 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:17:48,201 [ConsumerB] INFO – Health monitor started (PID 19620).
+2026-06-09 10:17:48,204 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-09 10:17:48,210 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:17:51,309 [ConsumerB] INFO – ★ Partition ASSIGNED  → [0, 1, 2]
+2026-06-09 10:23:09,279 [ConsumerB] INFO – Throughput: 0.0 msg/s | Total consumed: 1
+2026-06-09 10:23:14,290 [ConsumerB] INFO – Throughput: 176.3 msg/s | Total consumed: 884
+2026-06-09 10:24:27,420 [ConsumerB] INFO – Health monitor started (PID 10976).
+2026-06-09 10:24:27,425 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-09 10:24:27,433 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:24:29,898 [ConsumerB] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 10:24:32,959 [ConsumerB] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 10:24:32,959 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:24:32,969 [ConsumerB] INFO – ★ Partition ASSIGNED  → [0, 1, 2]
+2026-06-09 10:24:33,519 [ConsumerB] ERROR – Unhandled exception in poll loop: Extra data: line 47 column 2 (char 996)
+Traceback (most recent call last):
+  File "D:\DS\kafka-partitioner\consumer.py", line 319, in run_consumer
+    msg = consumer.poll(timeout=poll_timeout)
+  File "D:\DS\kafka-partitioner\consumer.py", line 189, in on_assign
+    mm.append_rebalance_event(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        consumer_name = consumer_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        detail        = f"Assigned {len(assigned)} partition(s) after rebalance",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\DS\kafka-partitioner\metrics_manager.py", line 199, in append_rebalance_event
+    history: List[Dict[str, Any]] = _read_json(path) or []
+                                    ~~~~~~~~~~^^^^^^
+  File "D:\DS\kafka-partitioner\metrics_manager.py", line 55, in _read_json
+    return json.load(fh)
+           ~~~~~~~~~^^^^
+  File "C:\Python314\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Python314\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Python314\Lib\json\decoder.py", line 348, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 47 column 2 (char 996)
+2026-06-09 10:24:33,522 [ConsumerB] INFO – Committing final offsets …
+2026-06-09 10:24:33,523 [ConsumerB] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:24:33,523 [ConsumerB] INFO – ✘ Partition REVOKED   → [0, 1, 2]
+2026-06-09 10:24:33,523 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:29:32,577 [ConsumerB] INFO – Health monitor started (PID 11688).
+2026-06-09 10:29:32,581 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-09 10:29:32,586 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:29:34,662 [ConsumerB] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 10:29:37,837 [ConsumerB] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 10:29:37,838 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:29:37,910 [ConsumerB] INFO – ★ Partition ASSIGNED  → [1]
+2026-06-09 10:30:22,627 [ConsumerB] INFO – Throughput: 0.0 msg/s | Total consumed: 1
+2026-06-09 10:30:27,673 [ConsumerB] INFO – Throughput: 61.3 msg/s | Total consumed: 309
+2026-06-09 10:34:46,931 [ConsumerB] INFO – Throughput: 0.2 msg/s | Total consumed: 351
+2026-06-09 10:34:51,969 [ConsumerB] INFO – Throughput: 59.3 msg/s | Total consumed: 648

@@ -1,0 +1,42 @@
+2026-06-09 10:04:15,645 [ConsumerC] INFO – Health monitor started (PID 15464).
+2026-06-09 10:04:15,647 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-09 10:04:15,652 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:04:16,521 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 10:04:16,673 [ConsumerC] ERROR – Unhandled exception in poll loop: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.tmp' -> 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.json'
+Traceback (most recent call last):
+  File "D:\DS\kafka-partitioner\consumer.py", line 319, in run_consumer
+    msg = consumer.poll(timeout=poll_timeout)
+  File "D:\DS\kafka-partitioner\consumer.py", line 189, in on_assign
+    mm.append_rebalance_event(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        consumer_name = consumer_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        detail        = f"Assigned {len(assigned)} partition(s) after rebalance",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\DS\kafka-partitioner\metrics_manager.py", line 211, in append_rebalance_event
+    _write_json(path, history)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\DS\kafka-partitioner\metrics_manager.py", line 63, in _write_json
+    tmp.replace(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 1096, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.tmp' -> 'D:\\DS\\kafka-partitioner\\metrics\\rebalance_history.json'
+2026-06-09 10:04:16,702 [ConsumerC] INFO – Committing final offsets …
+2026-06-09 10:04:16,703 [ConsumerC] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:04:16,703 [ConsumerC] INFO – ✘ Partition REVOKED   → [2]
+2026-06-09 10:04:16,703 [ConsumerC] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-09 10:09:02,351 [ConsumerC] INFO – Health monitor started (PID 24552).
+2026-06-09 10:24:37,219 [ConsumerC] INFO – Health monitor started (PID 2560).
+2026-06-09 10:29:35,269 [ConsumerC] INFO – Health monitor started (PID 8560).
+2026-06-09 10:29:35,272 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-09 10:29:35,277 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-09 10:29:37,910 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-09 10:30:22,526 [ConsumerC] INFO – Throughput: 0.0 msg/s | Total consumed: 1
+2026-06-09 10:30:27,573 [ConsumerC] INFO – Throughput: 43.4 msg/s | Total consumed: 219
+2026-06-09 10:34:46,830 [ConsumerC] INFO – Throughput: 0.1 msg/s | Total consumed: 246
+2026-06-09 10:34:51,853 [ConsumerC] INFO – Throughput: 41.1 msg/s | Total consumed: 452

@@ -1,0 +1,8 @@
+confluent-kafka==2.3.0
+streamlit==1.32.0
+psutil==5.9.8
+plotly==5.20.0
+pandas==2.2.1
+watchdog==4.0.0
+colorlog==6.8.2
+python-dateutil==2.9.0
