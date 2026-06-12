@@ -386,7 +386,7 @@ def hex_to_rgba(hex_color, opacity=0.3):
     b = int(hex_color[4:6], 16)
     return f"rgba({r}, {g}, {b}, {opacity})"
 # ---------------------------------------------------------------------------
-# Sidebar - Simple & Clean
+# Sidebar - Consumer Control with Better Feedback
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
@@ -408,7 +408,7 @@ with st.sidebar:
     with col_r1:
         if st.button("🗑️ Reset", use_container_width=True):
             mm.reset_all()
-            st.success("Reset!")
+            st.success("Reset complete!")
             time.sleep(0.5)
             st.rerun()
     with col_r2:
@@ -419,22 +419,50 @@ with st.sidebar:
     
     # Consumer Control
     st.markdown("### 🖥️ Consumer Control")
+    st.caption("Click Start/Stop to control consumers")
+    
+    # Get current status for each consumer
+    health = load_consumer_health()
+    
     for consumer in CONSUMER_NAMES:
-        st.markdown(f"**{consumer}**")
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button(f"▶️ Start", key=f"start_{consumer}", use_container_width=True):
-                mm.set_consumer_enabled(consumer, True)
-                st.success(f"{consumer} started")
-                time.sleep(0.3)
-                st.rerun()
-        with col2:
-            if st.button(f"⏹️ Stop", key=f"stop_{consumer}", use_container_width=True):
-                mm.set_consumer_enabled(consumer, False)
-                st.warning(f"{consumer} stopped")
-                time.sleep(0.3)
-                st.rerun()
-        st.markdown("---")
+        # Get current status
+        current_status = health.get(consumer, {}).get("status", "waiting")
+        is_enabled = mm.is_consumer_enabled(consumer)
+        
+        # Create a container for each consumer
+        with st.container():
+            st.markdown(f"**{consumer}**")
+            
+            # Show current status with colored indicator
+            status_color = {
+                "running": "🟢",
+                "stopped": "🟡", 
+                "crashed": "🔴",
+                "offline": "⚪",
+                "waiting": "🔵"
+            }.get(current_status, "⚪")
+            
+            st.markdown(f"Status: {status_color} `{current_status.upper()}`")
+            
+            # Start/Stop buttons
+            col1, col2 = st.columns(2)
+            with col1:
+                if st.button(f"▶️ Start", key=f"start_{consumer}", use_container_width=True):
+                    mm.set_consumer_enabled(consumer, True)
+                    st.success(f"✅ {consumer} start signal sent")
+                    st.info("Consumer will start within a few seconds")
+                    time.sleep(0.5)
+                    st.rerun()
+            
+            with col2:
+                if st.button(f"⏹️ Stop", key=f"stop_{consumer}", use_container_width=True):
+                    mm.set_consumer_enabled(consumer, False)
+                    st.warning(f"⚠️ {consumer} stop signal sent")
+                    st.info("Consumer will stop within a few seconds")
+                    time.sleep(0.5)
+                    st.rerun()
+            
+            st.markdown("---")
     
     # Partition Map
     st.markdown("### 📍 Partition Map")
@@ -694,93 +722,139 @@ else:
     st.info("No live events available. Start producer and consumers to see events.")
 
 # ---------------------------------------------------------------------------
-# Event Analytics Section
+# Event Analytics Section - Fixed
 # ---------------------------------------------------------------------------
 
 st.subheader("📊 Event Analytics")
 
+# Load event type stats
+event_type_stats = load_event_type_stats()
+
+# Map the event types correctly
+# If your stats have 'login', 'payment', 'order' - map them to display names
+if "login" in event_type_stats:
+    # Case 1: Stats are stored as login/payment/order (from partition mapping)
+    image_count = event_type_stats.get("login", 0)
+    video_count = event_type_stats.get("payment", 0)
+    order_count = event_type_stats.get("order", 0)
+elif "image" in event_type_stats:
+    # Case 2: Stats are stored as image/video/order (from consumer)
+    image_count = event_type_stats.get("image", 0)
+    video_count = event_type_stats.get("video", 0)
+    order_count = event_type_stats.get("order", 0)
+else:
+    # Default fallback
+    image_count = 0
+    video_count = 0
+    order_count = 0
+
+total_events = image_count + video_count + order_count
+
+# Calculate percentages
+image_pct = (image_count / total_events * 100) if total_events > 0 else 0
+video_pct = (video_count / total_events * 100) if total_events > 0 else 0
+order_pct = (order_count / total_events * 100) if total_events > 0 else 0
+
+# Display KPI Cards
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("📷 Image Events", event_type_stats.get("image", 0), delta=f"{image_pct:.1f}%" if total_events > 0 else None)
+    st.markdown(f"""
+    <div style="background: linear-gradient(135deg, #1b4a7a 0%, #162032 100%); 
+                border-radius: 12px; padding: 20px; text-align: center; 
+                border: 1px solid #58a6ff;">
+        <div style="font-size: 2rem;">📷</div>
+        <div style="font-size: 1.8rem; font-weight: 700; color: #58a6ff;">{image_count:,}</div>
+        <div style="font-size: 0.8rem; color: #8b949e;">Image Events (Login)</div>
+        <div style="font-size: 1.2rem; font-weight: 600; color: #58a6ff;">{image_pct:.1f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
-    st.metric("🎥 Video Events", event_type_stats.get("video", 0), delta=f"{video_pct:.1f}%" if total_events > 0 else None)
+    st.markdown(f"""
+    <div style="background: linear-gradient(135deg, #1b3a2d 0%, #162032 100%); 
+                border-radius: 12px; padding: 20px; text-align: center; 
+                border: 1px solid #3fb950;">
+        <div style="font-size: 2rem;">🎥</div>
+        <div style="font-size: 1.8rem; font-weight: 700; color: #3fb950;">{video_count:,}</div>
+        <div style="font-size: 0.8rem; color: #8b949e;">Video Events (Payment)</div>
+        <div style="font-size: 1.2rem; font-weight: 600; color: #3fb950;">{video_pct:.1f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col3:
-    st.metric("📦 Order Events", event_type_stats.get("order", 0), delta=f"{order_pct:.1f}%" if total_events > 0 else None)
+    st.markdown(f"""
+    <div style="background: linear-gradient(135deg, #3d2a6e 0%, #162032 100%); 
+                border-radius: 12px; padding: 20px; text-align: center; 
+                border: 1px solid #bc8cff;">
+        <div style="font-size: 2rem;">📦</div>
+        <div style="font-size: 1.8rem; font-weight: 700; color: #bc8cff;">{order_count:,}</div>
+        <div style="font-size: 0.8rem; color: #8b949e;">Order Events</div>
+        <div style="font-size: 1.2rem; font-weight: 600; color: #bc8cff;">{order_pct:.1f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
+# Display charts if there are events
 if total_events > 0:
+    # Create dataframe for charts
     analytics_df = pd.DataFrame({
-        "Event Type": list(event_type_stats.keys()),
-        "Count": list(event_type_stats.values())
+        "Event Type": ["Image (Login)", "Video (Payment)", "Order"],
+        "Count": [image_count, video_count, order_count]
     })
     
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### Event Distribution Bar Chart")
-        fig_bar_events = px.bar(
+        st.markdown("#### 📊 Event Distribution Bar Chart")
+        fig_bar = px.bar(
             analytics_df,
             x="Event Type",
             y="Count",
             color="Event Type",
-            color_discrete_map={"image": "#58a6ff", "video": "#3fb950", "order": "#bc8cff"},
+            color_discrete_map={
+                "Image (Login)": "#58a6ff",
+                "Video (Payment)": "#3fb950",
+                "Order": "#bc8cff"
+            },
             text="Count"
         )
-        fig_bar_events.update_traces(
+        fig_bar.update_traces(
             textposition='outside',
-            textfont=dict(color="#e6edf3", size=13),
-            marker=dict(line=dict(color='white', width=1))
+            textfont=dict(color="#e6edf3", size=13)
         )
-        fig_bar_events.update_layout(
-            title=dict(text="Event Type Distribution", font=dict(color="#e6edf3", size=14), x=0.5),
+        fig_bar.update_layout(
             paper_bgcolor="#0e1117",
             plot_bgcolor="#0e1117",
             font=dict(color="#e6edf3"),
             showlegend=False,
-            height=350,
-            xaxis=dict(title="Event Type", tickfont=dict(color="#e6edf3")),
-            yaxis=dict(title="Count", tickfont=dict(color="#e6edf3"), zeroline=True, zerolinecolor="#30363d"),
-            bargap=0.4
+            height=350
         )
-        st.plotly_chart(fig_bar_events, use_container_width=True)
+        st.plotly_chart(fig_bar, use_container_width=True)
     
     with col2:
-        st.markdown("#### Event Distribution Pie Chart")
-        fig_pie_events = px.pie(
+        st.markdown("#### 🎨 Event Distribution Pie Chart")
+        fig_pie = px.pie(
             analytics_df,
             names="Event Type",
             values="Count",
             color="Event Type",
-            color_discrete_map={"image": "#58a6ff", "video": "#3fb950", "order": "#bc8cff"},
-            hole=0.4,
+            color_discrete_map={
+                "Image (Login)": "#58a6ff",
+                "Video (Payment)": "#3fb950",
+                "Order": "#bc8cff"
+            },
+            hole=0.4
         )
-        fig_pie_events.update_traces(
+        fig_pie.update_traces(
             textposition='outside',
             textinfo='label+percent',
-            textfont=dict(color="#e6edf3", size=12),
-            marker=dict(line=dict(color='#0e1117', width=2)),
-            pull=[0.05, 0.05, 0.05]
+            textfont=dict(color="#e6edf3", size=12)
         )
-        fig_pie_events.update_layout(
-            title=dict(text="Event Type Distribution", font=dict(color="#e6edf3", size=14), x=0.5),
+        fig_pie.update_layout(
             paper_bgcolor="#0e1117",
             plot_bgcolor="#0e1117",
             font=dict(color="#e6edf3"),
             height=350,
-            showlegend=True,
-            legend=dict(
-                orientation="v",
-                yanchor="middle",
-                y=0.5,
-                xanchor="right",
-                x=0.95,
-                bgcolor="rgba(0,0,0,0.5)",
-                bordercolor="#30363d",
-                borderwidth=1,
-                font=dict(color="#e6edf3", size=10)
-            ),
             annotations=[
                 dict(
                     text=f"Total<br>{total_events:,}",
@@ -789,22 +863,29 @@ if total_events > 0:
                 )
             ]
         )
-        st.plotly_chart(fig_pie_events, use_container_width=True)
+        st.plotly_chart(fig_pie, use_container_width=True)
     
-    st.success(
-        f"""
-        ### Event Distribution Summary
-        
-        🖼️ **IMAGE:** {image_pct:.1f}% ({event_type_stats.get('image', 0):,} events)
-        🎬 **VIDEO:** {video_pct:.1f}% ({event_type_stats.get('video', 0):,} events)
-        📦 **ORDER:** {order_pct:.1f}% ({event_type_stats.get('order', 0):,} events)
-        
-        **Total Events:** {total_events:,}
-        """
-    )
+    # Summary
+    st.success(f"""
+    ### 📊 Event Distribution Summary
+    
+    | Event Type | Count | Percentage | Visual |
+    |-----------|-------|------------|--------|
+    | 🖼️ **Image (Login)** | {image_count:,} | {image_pct:.1f}% | {'█' * int(image_pct/2)}{'░' * (50 - int(image_pct/2))} |
+    | 🎬 **Video (Payment)** | {video_count:,} | {video_pct:.1f}% | {'█' * int(video_pct/2)}{'░' * (50 - int(video_pct/2))} |
+    | 📦 **Order** | {order_count:,} | {order_pct:.1f}% | {'█' * int(order_pct/2)}{'░' * (50 - int(order_pct/2))} |
+    
+    **Total Events:** {total_events:,}
+    """)
+    
 else:
-    st.info("No event analytics data available yet. Start the producer to see event statistics.")
+    st.info("ℹ️ No event data available yet. Run the producer to generate events!")
+    st.caption("💡 **Tip:** Run `python producer.py --events 1000` to generate test events")
 
+# Also display raw stats for debugging
+with st.expander("🔍 Raw Event Statistics (Debug)"):
+    st.json(event_type_stats)
+    st.caption(f"Total events calculated: {total_events}")
 # ---------------------------------------------------------------------------
 # Consumer Health Cards
 # ---------------------------------------------------------------------------

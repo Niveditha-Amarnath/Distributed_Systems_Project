@@ -215,3 +215,98 @@
 2026-06-09 20:53:52,372 [INFO] Producer –   Partition 1 (payment): 1734
 2026-06-09 20:53:52,372 [INFO] Producer –   Partition 2 (order)  : 1261
 2026-06-09 20:53:52,372 [INFO] Producer – ============================================================
+2026-06-10 14:25:22,629 [INFO] Producer – Metrics reset for new producer run.
+2026-06-10 14:25:23,032 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-10 14:25:23,047 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-10 14:25:23,230 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-10 14:26:49,903 [INFO] Producer – Producer connected to localhost:9092
+2026-06-10 14:26:49,903 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-10 14:26:50,918 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 3867)
+2026-06-10 14:26:51,807 [INFO] Producer – ✓ Delivered 200 messages (partition 0, offset 4510)
+2026-06-10 14:26:52,922 [INFO] Producer – ✓ Delivered 300 messages (partition 1, offset 3944)
+2026-06-10 14:26:54,126 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 4594)
+2026-06-10 14:26:55,150 [INFO] Producer – ✓ Delivered 500 messages (partition 1, offset 4009)
+2026-06-10 14:26:56,078 [INFO] Producer – ✓ Delivered 600 messages (partition 2, offset 2879)
+2026-06-10 14:26:56,931 [INFO] Producer – ✓ Delivered 700 messages (partition 2, offset 2901)
+2026-06-10 14:26:57,723 [INFO] Producer – ✓ Delivered 800 messages (partition 2, offset 2926)
+2026-06-10 14:26:58,675 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 4143)
+2026-06-10 14:26:59,557 [INFO] Producer – Flushing remaining messages …
+2026-06-10 14:26:59,608 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 2975)
+2026-06-10 14:26:59,829 [INFO] Producer – ============================================================
+2026-06-10 14:26:59,839 [INFO] Producer – Producer run complete.
+2026-06-10 14:26:59,846 [INFO] Producer –   Events generated  : 1000
+2026-06-10 14:26:59,853 [INFO] Producer –   Messages delivered: 1000
+2026-06-10 14:26:59,857 [INFO] Producer –   Messages failed   : 0
+2026-06-10 14:26:59,880 [INFO] Producer –   Total time        : 9.83 s
+2026-06-10 14:26:59,897 [INFO] Producer –   Overall throughput: 101.7 msg/s
+2026-06-10 14:26:59,901 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-10 14:26:59,902 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-10 14:26:59,903 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-10 14:26:59,906 [INFO] Producer – ============================================================
+2026-06-12 20:35:14,931 [INFO] Producer – Metrics reset for new producer run.
+2026-06-12 20:35:24,941 [WARNING] Producer – Connection attempt 1 failed. Retrying in 5 seconds...
+2026-06-12 20:35:39,950 [WARNING] Producer – Connection attempt 2 failed. Retrying in 5 seconds...
+2026-06-12 20:35:54,959 [WARNING] Producer – Connection attempt 3 failed. Retrying in 5 seconds...
+2026-06-12 20:36:09,964 [WARNING] Producer – Connection attempt 4 failed. Retrying in 5 seconds...
+2026-06-12 20:36:24,976 [ERROR] Producer – Failed to connect to Kafka after 5 attempts
+2026-06-12 20:36:24,976 [ERROR] Producer – Make sure Kafka is running: docker-compose up -d
+2026-06-12 20:36:28,336 [INFO] Producer – Metrics reset for new producer run.
+2026-06-12 20:36:38,344 [WARNING] Producer – Connection attempt 1 failed. Retrying in 5 seconds...
+2026-06-12 20:36:53,346 [WARNING] Producer – Connection attempt 2 failed. Retrying in 5 seconds...
+2026-06-12 20:37:08,354 [WARNING] Producer – Connection attempt 3 failed. Retrying in 5 seconds...
+2026-06-12 20:37:23,368 [WARNING] Producer – Connection attempt 4 failed. Retrying in 5 seconds...
+2026-06-12 20:37:36,016 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-12 20:37:36,018 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-12 20:37:36,042 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-12 20:37:48,149 [INFO] Producer – Producer connected to localhost:9092
+2026-06-12 20:37:48,149 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-12 20:37:48,804 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 4217)
+2026-06-12 20:37:49,421 [INFO] Producer – ✓ Delivered 200 messages (partition 0, offset 4915)
+2026-06-12 20:37:49,948 [INFO] Producer – ✓ Delivered 300 messages (partition 1, offset 4294)
+2026-06-12 20:37:50,542 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 4999)
+2026-06-12 20:37:51,207 [INFO] Producer – ✓ Delivered 500 messages (partition 1, offset 4359)
+2026-06-12 20:37:51,828 [INFO] Producer – ✓ Delivered 600 messages (partition 2, offset 3124)
+2026-06-12 20:37:52,436 [INFO] Producer – ✓ Delivered 700 messages (partition 2, offset 3146)
+2026-06-12 20:37:53,059 [INFO] Producer – ✓ Delivered 800 messages (partition 2, offset 3171)
+2026-06-12 20:37:53,722 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 4493)
+2026-06-12 20:37:54,235 [INFO] Producer – Flushing remaining messages …
+2026-06-12 20:37:54,238 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 3220)
+2026-06-12 20:37:54,279 [INFO] Producer – ============================================================
+2026-06-12 20:37:54,280 [INFO] Producer – Producer run complete.
+2026-06-12 20:37:54,280 [INFO] Producer –   Events generated  : 1000
+2026-06-12 20:37:54,280 [INFO] Producer –   Messages delivered: 1000
+2026-06-12 20:37:54,280 [INFO] Producer –   Messages failed   : 0
+2026-06-12 20:37:54,281 [INFO] Producer –   Total time        : 6.12 s
+2026-06-12 20:37:54,281 [INFO] Producer –   Overall throughput: 163.5 msg/s
+2026-06-12 20:37:54,281 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-12 20:37:54,282 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-12 20:37:54,282 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-12 20:37:54,282 [INFO] Producer – ============================================================
+2026-06-12 20:42:34,787 [INFO] Producer – Metrics reset for new producer run.
+2026-06-12 20:42:34,855 [INFO] Producer – Topic 'user-events' already exists – skipping creation.
+2026-06-12 20:42:34,856 [INFO] Producer – Generating 1000 synthetic events …
+2026-06-12 20:42:34,865 [INFO] Producer – Event distribution: {'login': 405, 'payment': 350, 'order': 245}
+2026-06-12 20:42:46,629 [INFO] Producer – Producer connected to localhost:9092
+2026-06-12 20:42:46,629 [INFO] Producer – Producing 1000 events to topic 'user-events' …
+2026-06-12 20:42:47,262 [INFO] Producer – ✓ Delivered 100 messages (partition 1, offset 4567)
+2026-06-12 20:42:47,833 [INFO] Producer – ✓ Delivered 200 messages (partition 0, offset 5320)
+2026-06-12 20:42:48,414 [INFO] Producer – ✓ Delivered 300 messages (partition 1, offset 4644)
+2026-06-12 20:42:48,921 [INFO] Producer – ✓ Delivered 400 messages (partition 0, offset 5404)
+2026-06-12 20:42:49,564 [INFO] Producer – ✓ Delivered 500 messages (partition 1, offset 4709)
+2026-06-12 20:42:50,145 [INFO] Producer – ✓ Delivered 600 messages (partition 2, offset 3369)
+2026-06-12 20:42:50,718 [INFO] Producer – ✓ Delivered 700 messages (partition 2, offset 3391)
+2026-06-12 20:42:51,300 [INFO] Producer – ✓ Delivered 800 messages (partition 2, offset 3416)
+2026-06-12 20:42:51,883 [INFO] Producer – ✓ Delivered 900 messages (partition 1, offset 4843)
+2026-06-12 20:42:52,396 [INFO] Producer – Flushing remaining messages …
+2026-06-12 20:42:52,413 [INFO] Producer – ✓ Delivered 1000 messages (partition 2, offset 3465)
+2026-06-12 20:42:52,449 [INFO] Producer – ============================================================
+2026-06-12 20:42:52,450 [INFO] Producer – Producer run complete.
+2026-06-12 20:42:52,450 [INFO] Producer –   Events generated  : 1000
+2026-06-12 20:42:52,450 [INFO] Producer –   Messages delivered: 1000
+2026-06-12 20:42:52,450 [INFO] Producer –   Messages failed   : 0
+2026-06-12 20:42:52,450 [INFO] Producer –   Total time        : 5.81 s
+2026-06-12 20:42:52,451 [INFO] Producer –   Overall throughput: 172.2 msg/s
+2026-06-12 20:42:52,451 [INFO] Producer –   Partition 0 (login)  : 405
+2026-06-12 20:42:52,451 [INFO] Producer –   Partition 1 (payment): 350
+2026-06-12 20:42:52,451 [INFO] Producer –   Partition 2 (order)  : 245
+2026-06-12 20:42:52,451 [INFO] Producer – ============================================================

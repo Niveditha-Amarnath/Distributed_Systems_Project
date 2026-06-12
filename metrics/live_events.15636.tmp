@@ -1,0 +1,352 @@
+[
+  {
+    "ts": "2026-06-10T08:59:59.363990+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4948"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.422544+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3397"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.597626+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2779"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.664542+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4954"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.722729+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4954"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.840636+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4956"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.887428+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4956"
+  },
+  {
+    "ts": "2026-06-10T08:59:59.983682+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2782"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.368941+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3403"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.462114+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4968"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.514661+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4968"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.638583+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4970"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.684589+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4970"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.747705+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3404"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.816985+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2787"
+  },
+  {
+    "ts": "2026-06-10T09:00:00.872505+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2787"
+  },
+  {
+    "ts": "2026-06-10T09:00:01.068744+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3409"
+  },
+  {
+    "ts": "2026-06-10T09:00:01.118319+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3409"
+  },
+  {
+    "ts": "2026-06-10T09:00:01.197729+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4971"
+  },
+  {
+    "ts": "2026-06-10T09:00:01.367674+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3414"
+  },
+  {
+    "ts": "2026-06-10T09:00:01.569116+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4975"
+  },
+  {
+    "ts": "2026-06-10T09:00:01.932326+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4975"
+  },
+  {
+    "ts": "2026-06-10T09:00:02.054449+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2798"
+  },
+  {
+    "ts": "2026-06-10T09:00:02.264599+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2798"
+  },
+  {
+    "ts": "2026-06-10T09:00:02.520189+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3417"
+  },
+  {
+    "ts": "2026-06-10T09:00:02.665180+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3417"
+  },
+  {
+    "ts": "2026-06-10T09:00:02.752596+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2800"
+  },
+  {
+    "ts": "2026-06-10T09:00:02.828019+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3418"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.033615+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4983"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.094201+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4983"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.289968+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4991"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.551481+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "4991"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.601851+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3424"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.650011+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3424"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.917750+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "2"
+  },
+  {
+    "ts": "2026-06-10T09:00:03.962982+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2810"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.006880+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2810"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.113191+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2811"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.158080+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2811"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.356546+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2814"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.399706+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2814"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.570670+00:00",
+    "event_type": "login",
+    "partition": 0,
+    "consumer": "ConsumerA",
+    "key": "2816"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.716496+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "16"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.762337+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3432"
+  },
+  {
+    "ts": "2026-06-10T09:00:04.909147+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3432"
+  },
+  {
+    "ts": "2026-06-10T09:00:05.029964+00:00",
+    "event_type": "payment",
+    "partition": 1,
+    "consumer": "ConsumerB",
+    "key": "3433"
+  },
+  {
+    "ts": "2026-06-10T09:00:05.076210+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "19"
+  },
+  {
+    "ts": "2026-06-10T09:00:05.129989+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "19"
+  },
+  {
+    "ts": "2026-06-10T09:00:05.241616+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "20"
+  },
+  {
+    "ts": "2026-06-10T09:00:05.290882+00:00",
+    "event_type": "order",
+    "partition": 2,
+    "consumer": "ConsumerC",
+    "key": "20"
+  }
+]

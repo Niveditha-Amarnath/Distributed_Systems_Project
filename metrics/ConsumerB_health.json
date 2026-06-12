@@ -1,9 +1,0 @@
-{
-  "consumer": "ConsumerB",
-  "pid": 26184,
-  "status": "stopped",
-  "uptime_s": 134.7,
-  "cpu_percent": 0.0,
-  "memory_mb": 0.0,
-  "last_updated": "2026-06-09T15:24:38.140557+00:00"
-}

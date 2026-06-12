@@ -311,16 +311,21 @@ def run_consumer(
     signal.signal(signal.SIGINT,  _shutdown)
     signal.signal(signal.SIGTERM, _shutdown)
 
-    # ── Poll loop ─────────────────────────────────────────────────────────
+        # ── Poll loop ─────────────────────────────────────────────────────────
     total_consumed    = 0
     window_start      = time.monotonic()
     window_count      = 0
     auto_commit_every = 100          # commit every N messages
+    last_control_check = 0
+    control_check_interval = 2  # Check every 2 seconds (in seconds, not messages)
 
     try:
         while _running[0]:
-            # Check consumer control periodically (failure simulation)
-            if total_consumed % CONTROL_CHECK_INTERVAL == 0:
+            current_time = time.monotonic()
+            
+            # Check consumer control periodically (every 2 seconds)
+            if current_time - last_control_check >= control_check_interval:
+                last_control_check = current_time
                 if not mm.is_consumer_enabled(consumer_name):
                     log.info(f"🛑 Consumer {consumer_name} disabled via control file. Shutting down...")
                     mm.append_rebalance_event(
@@ -375,16 +380,6 @@ def run_consumer(
                 consumer_name=consumer_name,
                 message_key=str(event_id)
             )
-                        # Record live event for dashboard
-            mm.add_live_event(
-                event_type=payload.get("type", "unknown"),
-                partition=msg.partition(),
-                consumer_name=consumer_name,
-                message_key=str(payload.get("event_id", ""))
-            )
-            
-            # Record event type for analytics
-            mm.increment_event_type(payload.get("type", "unknown"))
             
             # Record event type for analytics
             mm.increment_event_type(event_type)
@@ -415,9 +410,9 @@ def run_consumer(
         # ── Crash handling ────────────────────────────────────────────────
         log.exception("Unhandled exception in poll loop: %s", exc)
         mm.append_rebalance_event(
-            consumer_name = consumer_name,
-            event_type    = "crashed",
-            detail        = str(exc),
+            consumer_name=consumer_name,
+            event_type="crashed",
+            detail=str(exc),
         )
         monitor.mark_crashed(str(exc))
         raise

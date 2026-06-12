@@ -1,116 +1,13 @@
 [
   {
-    "ts": "2026-06-09T15:22:27.780999+00:00",
-    "consumer": "ConsumerB",
-    "event": "revoked",
-    "partitions": [
-      2
-    ],
-    "detail": "Revoked 1 partition(s)"
-  },
-  {
-    "ts": "2026-06-09T15:22:28.471062+00:00",
-    "consumer": "ConsumerA",
-    "event": "revoked",
-    "partitions": [
-      0,
-      1
-    ],
-    "detail": "Revoked 2 partition(s)"
-  },
-  {
-    "ts": "2026-06-09T15:22:28.554707+00:00",
+    "ts": "2026-06-12T15:12:35.831535+00:00",
     "consumer": "ConsumerA",
     "event": "assigned",
     "partitions": [
-      0
-    ],
-    "detail": "Assigned 1 partition(s) after rebalance"
-  },
-  {
-    "ts": "2026-06-09T15:22:28.656477+00:00",
-    "consumer": "ConsumerC",
-    "event": "assigned",
-    "partitions": [
-      2
-    ],
-    "detail": "Assigned 1 partition(s) after rebalance"
-  },
-  {
-    "ts": "2026-06-09T15:24:34.230509+00:00",
-    "consumer": "ConsumerA",
-    "event": "stopped",
-    "partitions": [],
-    "detail": "Consumer ConsumerA stopped via control file"
-  },
-  {
-    "ts": "2026-06-09T15:24:34.253873+00:00",
-    "consumer": "ConsumerA",
-    "event": "revoked",
-    "partitions": [
-      0
-    ],
-    "detail": "Revoked 1 partition(s)"
-  },
-  {
-    "ts": "2026-06-09T15:24:35.582259+00:00",
-    "consumer": "ConsumerB",
-    "event": "revoked",
-    "partitions": [
-      1
-    ],
-    "detail": "Revoked 1 partition(s)"
-  },
-  {
-    "ts": "2026-06-09T15:24:36.298335+00:00",
-    "consumer": "ConsumerC",
-    "event": "revoked",
-    "partitions": [
-      2
-    ],
-    "detail": "Revoked 1 partition(s)"
-  },
-  {
-    "ts": "2026-06-09T15:24:36.347173+00:00",
-    "consumer": "ConsumerB",
-    "event": "assigned",
-    "partitions": [
       0,
-      1
-    ],
-    "detail": "Assigned 2 partition(s) after rebalance"
-  },
-  {
-    "ts": "2026-06-09T15:24:37.542247+00:00",
-    "consumer": "ConsumerC",
-    "event": "stopped",
-    "partitions": [],
-    "detail": "Consumer ConsumerC stopped via control file"
-  },
-  {
-    "ts": "2026-06-09T15:24:37.572585+00:00",
-    "consumer": "ConsumerC",
-    "event": "revoked",
-    "partitions": [
+      1,
       2
     ],
-    "detail": "Revoked 1 partition(s)"
-  },
-  {
-    "ts": "2026-06-09T15:24:38.091278+00:00",
-    "consumer": "ConsumerB",
-    "event": "stopped",
-    "partitions": [],
-    "detail": "Consumer ConsumerB stopped via control file"
-  },
-  {
-    "ts": "2026-06-09T15:24:38.120971+00:00",
-    "consumer": "ConsumerB",
-    "event": "revoked",
-    "partitions": [
-      0,
-      1
-    ],
-    "detail": "Revoked 2 partition(s)"
+    "detail": "Assigned 3 partition(s) after rebalance"
   }
 ]

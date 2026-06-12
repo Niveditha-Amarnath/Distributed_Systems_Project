@@ -1,9 +1,11 @@
 {
   "consumer": "ConsumerA",
-  "pid": 22980,
-  "status": "stopped",
-  "uptime_s": 132.8,
+  "pid": 20060,
+  "status": "running",
+  "uptime_s": 87.1,
   "cpu_percent": 0.0,
-  "memory_mb": 0.0,
-  "last_updated": "2026-06-09T15:24:34.298257+00:00"
+  "memory_mb": 31.21,
+  "memory_percent": 0.19,
+  "num_threads": 9,
+  "last_updated": "2026-06-12T15:13:59.931823+00:00"
 }

@@ -93,3 +93,66 @@ AttributeError: 'MetricsManager' object has no attribute 'add_live_event'
 2026-06-09 20:54:37,548 [ConsumerC] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
 2026-06-09 20:54:37,578 [ConsumerC] INFO – Consumer closed.
 2026-06-09 20:54:37,595 [ConsumerC] INFO – ─── ConsumerC shut down. Total consumed: 550 ───
+2026-06-10 14:25:29,681 [ConsumerC] INFO – Health monitor started (PID 15636).
+2026-06-10 14:25:29,729 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-10 14:25:29,758 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-10 14:25:31,738 [ConsumerC] INFO – ★ Partition ASSIGNED  → [2]
+2026-06-10 14:25:35,127 [ConsumerC] INFO – Throughput: 2.1 msg/s | Total consumed: 11
+2026-06-10 14:25:40,528 [ConsumerC] INFO – Throughput: 2.8 msg/s | Total consumed: 26
+2026-06-10 14:25:45,616 [ConsumerC] INFO – Throughput: 3.4 msg/s | Total consumed: 43
+2026-06-10 14:25:50,745 [ConsumerC] INFO – Throughput: 4.1 msg/s | Total consumed: 64
+2026-06-10 14:25:55,925 [ConsumerC] INFO – Throughput: 2.5 msg/s | Total consumed: 77
+2026-06-10 14:26:01,088 [ConsumerC] INFO – Throughput: 3.3 msg/s | Total consumed: 94
+2026-06-10 14:26:06,212 [ConsumerC] INFO – Throughput: 2.4 msg/s | Total consumed: 106
+2026-06-10 14:26:11,277 [ConsumerC] INFO – Throughput: 3.4 msg/s | Total consumed: 123
+2026-06-10 14:26:16,521 [ConsumerC] INFO – Throughput: 2.9 msg/s | Total consumed: 138
+2026-06-10 14:26:21,707 [ConsumerC] INFO – Throughput: 3.3 msg/s | Total consumed: 155
+2026-06-10 14:26:26,749 [ConsumerC] INFO – Throughput: 2.2 msg/s | Total consumed: 166
+2026-06-10 14:26:32,090 [ConsumerC] INFO – Throughput: 2.3 msg/s | Total consumed: 178
+2026-06-10 14:26:38,147 [ConsumerC] INFO – Throughput: 2.0 msg/s | Total consumed: 190
+2026-06-10 14:26:44,042 [ConsumerC] INFO – Throughput: 1.6 msg/s | Total consumed: 199
+2026-06-10 14:26:49,123 [ConsumerC] INFO – Throughput: 3.0 msg/s | Total consumed: 214
+2026-06-10 14:26:55,061 [ConsumerC] INFO – Throughput: 2.8 msg/s | Total consumed: 230
+2026-06-10 14:27:00,951 [ConsumerC] INFO – Throughput: 2.1 msg/s | Total consumed: 242
+2026-06-10 14:27:06,068 [ConsumerC] INFO – Throughput: 3.0 msg/s | Total consumed: 257
+2026-06-10 14:27:11,858 [ConsumerC] INFO – Throughput: 1.9 msg/s | Total consumed: 268
+2026-06-10 14:27:17,089 [ConsumerC] INFO – Throughput: 1.9 msg/s | Total consumed: 278
+2026-06-10 14:27:22,109 [ConsumerC] INFO – Throughput: 3.0 msg/s | Total consumed: 293
+2026-06-10 14:27:27,279 [ConsumerC] INFO – Throughput: 2.7 msg/s | Total consumed: 307
+2026-06-10 14:27:32,491 [ConsumerC] INFO – Throughput: 2.7 msg/s | Total consumed: 321
+2026-06-10 14:27:37,909 [ConsumerC] INFO – Throughput: 3.2 msg/s | Total consumed: 338
+2026-06-10 14:27:43,088 [ConsumerC] INFO – Throughput: 2.1 msg/s | Total consumed: 349
+2026-06-10 14:27:48,214 [ConsumerC] INFO – Throughput: 3.3 msg/s | Total consumed: 366
+2026-06-10 14:27:53,557 [ConsumerC] INFO – Throughput: 3.2 msg/s | Total consumed: 383
+2026-06-10 14:27:58,854 [ConsumerC] INFO – Throughput: 2.3 msg/s | Total consumed: 395
+2026-06-10 14:28:04,285 [ConsumerC] INFO – Throughput: 2.2 msg/s | Total consumed: 407
+2026-06-10 14:28:09,382 [ConsumerC] INFO – Throughput: 2.8 msg/s | Total consumed: 421
+2026-06-10 14:28:14,460 [ConsumerC] INFO – Throughput: 3.0 msg/s | Total consumed: 436
+2026-06-10 14:28:19,712 [ConsumerC] INFO – Throughput: 3.9 msg/s | Total consumed: 456
+2026-06-10 14:28:24,882 [ConsumerC] INFO – Throughput: 2.0 msg/s | Total consumed: 466
+2026-06-10 14:28:30,212 [ConsumerC] INFO – Throughput: 2.3 msg/s | Total consumed: 478
+2026-06-10 14:28:35,483 [ConsumerC] INFO – Throughput: 2.7 msg/s | Total consumed: 492
+2026-06-10 14:28:41,237 [ConsumerC] INFO – Throughput: 2.5 msg/s | Total consumed: 506
+2026-06-10 14:28:46,350 [ConsumerC] INFO – Throughput: 2.8 msg/s | Total consumed: 520
+2026-06-10 14:28:51,548 [ConsumerC] INFO – Throughput: 3.7 msg/s | Total consumed: 539
+2026-06-10 14:28:56,876 [ConsumerC] INFO – Throughput: 1.6 msg/s | Total consumed: 547
+2026-06-10 14:29:02,050 [ConsumerC] INFO – Throughput: 2.4 msg/s | Total consumed: 559
+2026-06-10 14:29:07,325 [ConsumerC] INFO – Throughput: 1.2 msg/s | Total consumed: 565
+2026-06-10 14:29:12,510 [ConsumerC] INFO – Throughput: 3.2 msg/s | Total consumed: 581
+2026-06-10 14:29:18,313 [ConsumerC] INFO – Throughput: 2.2 msg/s | Total consumed: 593
+2026-06-10 14:29:23,735 [ConsumerC] INFO – Throughput: 2.1 msg/s | Total consumed: 604
+2026-06-10 14:29:29,061 [ConsumerC] INFO – Throughput: 2.1 msg/s | Total consumed: 615
+2026-06-10 14:29:34,264 [ConsumerC] INFO – Throughput: 2.9 msg/s | Total consumed: 630
+2026-06-10 14:29:39,871 [ConsumerC] INFO – Throughput: 2.7 msg/s | Total consumed: 645
+2026-06-10 14:29:45,260 [ConsumerC] INFO – Throughput: 2.4 msg/s | Total consumed: 658
+2026-06-10 14:29:50,553 [ConsumerC] INFO – Throughput: 2.9 msg/s | Total consumed: 673
+2026-06-10 14:29:55,817 [ConsumerC] INFO – Throughput: 2.7 msg/s | Total consumed: 687
+2026-06-10 14:30:01,139 [ConsumerC] INFO – Throughput: 3.2 msg/s | Total consumed: 704
+2026-06-12 20:30:34,973 [ConsumerC] INFO – Health monitor started (PID 25632).
+2026-06-12 20:30:34,975 [ConsumerC] INFO – ► ConsumerC joined consumer group 'user-events-group'
+2026-06-12 20:30:34,981 [ConsumerC] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:30:53,265 [ConsumerC] INFO – 🛑 Consumer ConsumerC disabled via control file. Shutting down...
+2026-06-12 20:30:53,267 [ConsumerC] INFO – Committing final offsets …
+2026-06-12 20:30:53,267 [ConsumerC] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-12 20:30:53,268 [ConsumerC] INFO – Consumer closed.
+2026-06-12 20:30:53,269 [ConsumerC] INFO – ─── ConsumerC shut down. Total consumed: 0 ───

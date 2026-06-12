@@ -169,3 +169,83 @@ AttributeError: 'MetricsManager' object has no attribute 'add_live_event'
 2026-06-09 20:54:38,097 [ConsumerB] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
 2026-06-09 20:54:38,128 [ConsumerB] INFO – Consumer closed.
 2026-06-09 20:54:38,142 [ConsumerB] INFO – ─── ConsumerB shut down. Total consumed: 550 ───
+2026-06-10 14:25:27,926 [ConsumerB] INFO – Health monitor started (PID 2812).
+2026-06-10 14:25:27,939 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-10 14:25:28,002 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-10 14:25:31,733 [ConsumerB] INFO – ★ Partition ASSIGNED  → [1]
+2026-06-10 14:25:33,324 [ConsumerB] INFO – Throughput: 0.6 msg/s | Total consumed: 3
+2026-06-10 14:25:38,465 [ConsumerB] INFO – Throughput: 2.9 msg/s | Total consumed: 18
+2026-06-10 14:25:43,623 [ConsumerB] INFO – Throughput: 2.5 msg/s | Total consumed: 31
+2026-06-10 14:25:48,651 [ConsumerB] INFO – Throughput: 2.0 msg/s | Total consumed: 41
+2026-06-10 14:25:53,840 [ConsumerB] INFO – Throughput: 2.3 msg/s | Total consumed: 53
+2026-06-10 14:25:59,367 [ConsumerB] INFO – Throughput: 3.1 msg/s | Total consumed: 70
+2026-06-10 14:26:04,539 [ConsumerB] INFO – Throughput: 2.1 msg/s | Total consumed: 81
+2026-06-10 14:26:09,903 [ConsumerB] INFO – Throughput: 2.6 msg/s | Total consumed: 95
+2026-06-10 14:26:15,105 [ConsumerB] INFO – Throughput: 3.3 msg/s | Total consumed: 112
+2026-06-10 14:26:20,409 [ConsumerB] INFO – Throughput: 3.0 msg/s | Total consumed: 128
+2026-06-10 14:26:25,803 [ConsumerB] INFO – Throughput: 2.2 msg/s | Total consumed: 140
+2026-06-10 14:26:31,261 [ConsumerB] INFO – Throughput: 3.1 msg/s | Total consumed: 157
+2026-06-10 14:26:37,371 [ConsumerB] INFO – Throughput: 1.8 msg/s | Total consumed: 168
+2026-06-10 14:26:42,900 [ConsumerB] INFO – Throughput: 2.2 msg/s | Total consumed: 180
+2026-06-10 14:26:47,942 [ConsumerB] INFO – Throughput: 2.4 msg/s | Total consumed: 192
+2026-06-10 14:26:53,154 [ConsumerB] INFO – Throughput: 2.7 msg/s | Total consumed: 206
+2026-06-10 14:26:58,568 [ConsumerB] INFO – Throughput: 3.0 msg/s | Total consumed: 222
+2026-06-10 14:27:04,278 [ConsumerB] INFO – Throughput: 1.8 msg/s | Total consumed: 232
+2026-06-10 14:27:09,425 [ConsumerB] INFO – Throughput: 2.7 msg/s | Total consumed: 246
+2026-06-10 14:27:14,889 [ConsumerB] INFO – Throughput: 1.5 msg/s | Total consumed: 254
+2026-06-10 14:27:20,040 [ConsumerB] INFO – Throughput: 2.9 msg/s | Total consumed: 269
+2026-06-10 14:27:25,209 [ConsumerB] INFO – Throughput: 3.1 msg/s | Total consumed: 285
+2026-06-10 14:27:30,307 [ConsumerB] INFO – Throughput: 3.7 msg/s | Total consumed: 304
+2026-06-10 14:27:35,418 [ConsumerB] INFO – Throughput: 3.1 msg/s | Total consumed: 320
+2026-06-10 14:27:40,840 [ConsumerB] INFO – Throughput: 2.6 msg/s | Total consumed: 334
+2026-06-10 14:27:46,253 [ConsumerB] INFO – Throughput: 2.8 msg/s | Total consumed: 349
+2026-06-10 14:27:51,617 [ConsumerB] INFO – Throughput: 2.4 msg/s | Total consumed: 362
+2026-06-10 14:27:56,850 [ConsumerB] INFO – Throughput: 2.5 msg/s | Total consumed: 375
+2026-06-10 14:28:02,100 [ConsumerB] INFO – Throughput: 3.3 msg/s | Total consumed: 392
+2026-06-10 14:28:07,389 [ConsumerB] INFO – Throughput: 1.9 msg/s | Total consumed: 402
+2026-06-10 14:28:12,675 [ConsumerB] INFO – Throughput: 3.3 msg/s | Total consumed: 419
+2026-06-10 14:28:17,939 [ConsumerB] INFO – Throughput: 2.7 msg/s | Total consumed: 433
+2026-06-10 14:28:23,300 [ConsumerB] INFO – Throughput: 1.9 msg/s | Total consumed: 443
+2026-06-10 14:28:28,710 [ConsumerB] INFO – Throughput: 1.1 msg/s | Total consumed: 449
+2026-06-10 14:28:33,945 [ConsumerB] INFO – Throughput: 2.7 msg/s | Total consumed: 463
+2026-06-10 14:28:39,052 [ConsumerB] INFO – Throughput: 3.9 msg/s | Total consumed: 483
+2026-06-10 14:28:44,078 [ConsumerB] INFO – Throughput: 3.2 msg/s | Total consumed: 499
+2026-06-10 14:28:49,628 [ConsumerB] INFO – Throughput: 2.5 msg/s | Total consumed: 513
+2026-06-10 14:28:56,247 [ConsumerB] INFO – Throughput: 2.1 msg/s | Total consumed: 527
+2026-06-10 14:29:01,673 [ConsumerB] INFO – Throughput: 2.2 msg/s | Total consumed: 539
+2026-06-10 14:29:06,702 [ConsumerB] INFO – Throughput: 1.2 msg/s | Total consumed: 545
+2026-06-10 14:29:12,336 [ConsumerB] INFO – Throughput: 2.7 msg/s | Total consumed: 560
+2026-06-10 14:29:17,521 [ConsumerB] INFO – Throughput: 3.1 msg/s | Total consumed: 576
+2026-06-10 14:29:22,678 [ConsumerB] INFO – Throughput: 1.8 msg/s | Total consumed: 585
+2026-06-10 14:29:28,016 [ConsumerB] INFO – Throughput: 2.1 msg/s | Total consumed: 596
+2026-06-10 14:29:33,182 [ConsumerB] INFO – Throughput: 3.0 msg/s | Total consumed: 611
+2026-06-10 14:29:38,302 [ConsumerB] INFO – Throughput: 2.4 msg/s | Total consumed: 623
+2026-06-10 14:29:43,577 [ConsumerB] INFO – Throughput: 2.1 msg/s | Total consumed: 634
+2026-06-10 14:29:48,856 [ConsumerB] INFO – Throughput: 2.5 msg/s | Total consumed: 647
+2026-06-10 14:29:53,918 [ConsumerB] INFO – Throughput: 3.2 msg/s | Total consumed: 663
+2026-06-10 14:29:58,978 [ConsumerB] INFO – Throughput: 3.2 msg/s | Total consumed: 679
+2026-06-10 14:30:04,167 [ConsumerB] INFO – Throughput: 2.7 msg/s | Total consumed: 693
+2026-06-12 20:31:24,391 [ConsumerB] INFO – Health monitor started (PID 2648).
+2026-06-12 20:31:24,394 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-12 20:31:24,400 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:31:24,400 [ConsumerB] INFO – 🛑 Consumer ConsumerB disabled via control file. Shutting down...
+2026-06-12 20:31:24,409 [ConsumerB] INFO – Committing final offsets …
+2026-06-12 20:31:24,410 [ConsumerB] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-12 20:31:24,410 [ConsumerB] INFO – Consumer closed.
+2026-06-12 20:31:24,412 [ConsumerB] INFO – ─── ConsumerB shut down. Total consumed: 0 ───
+2026-06-12 20:31:26,550 [ConsumerB] INFO – Health monitor started (PID 13584).
+2026-06-12 20:31:26,552 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-12 20:31:26,557 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:31:26,557 [ConsumerB] INFO – 🛑 Consumer ConsumerB disabled via control file. Shutting down...
+2026-06-12 20:31:26,568 [ConsumerB] INFO – Committing final offsets …
+2026-06-12 20:31:26,568 [ConsumerB] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-12 20:31:26,569 [ConsumerB] INFO – Consumer closed.
+2026-06-12 20:31:26,571 [ConsumerB] INFO – ─── ConsumerB shut down. Total consumed: 0 ───
+2026-06-12 20:31:39,001 [ConsumerB] INFO – Health monitor started (PID 3868).
+2026-06-12 20:31:39,003 [ConsumerB] INFO – ► ConsumerB joined consumer group 'user-events-group'
+2026-06-12 20:31:39,007 [ConsumerB] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:34:30,016 [ConsumerB] INFO – 🛑 Consumer ConsumerB disabled via control file. Shutting down...
+2026-06-12 20:34:30,019 [ConsumerB] INFO – Committing final offsets …
+2026-06-12 20:34:30,019 [ConsumerB] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-12 20:34:30,020 [ConsumerB] INFO – Consumer closed.
+2026-06-12 20:34:30,021 [ConsumerB] INFO – ─── ConsumerB shut down. Total consumed: 0 ───

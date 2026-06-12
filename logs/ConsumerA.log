@@ -163,3 +163,103 @@ AttributeError: 'MetricsManager' object has no attribute 'add_live_event'
 2026-06-09 20:54:34,235 [ConsumerA] WARNING – Could not commit offsets on revoke: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
 2026-06-09 20:54:34,276 [ConsumerA] INFO – Consumer closed.
 2026-06-09 20:54:34,300 [ConsumerA] INFO – ─── ConsumerA shut down. Total consumed: 500 ───
+2026-06-10 14:25:24,339 [ConsumerA] INFO – Health monitor started (PID 22000).
+2026-06-10 14:25:24,350 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-10 14:25:24,392 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-10 14:25:28,214 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0, 1, 2]
+2026-06-10 14:25:29,476 [ConsumerA] INFO – Throughput: 0.4 msg/s | Total consumed: 2
+2026-06-10 14:25:31,555 [ConsumerA] INFO – ✘ Partition REVOKED   → [0, 1, 2]
+2026-06-10 14:25:31,661 [ConsumerA] INFO – Offsets committed before revocation.
+2026-06-10 14:25:31,753 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0]
+2026-06-10 14:25:35,308 [ConsumerA] INFO – Throughput: 2.2 msg/s | Total consumed: 15
+2026-06-10 14:25:40,626 [ConsumerA] INFO – Throughput: 2.3 msg/s | Total consumed: 27
+2026-06-10 14:25:45,824 [ConsumerA] INFO – Throughput: 1.7 msg/s | Total consumed: 36
+2026-06-10 14:25:51,010 [ConsumerA] INFO – Throughput: 2.9 msg/s | Total consumed: 51
+2026-06-10 14:25:56,508 [ConsumerA] INFO – Throughput: 3.5 msg/s | Total consumed: 70
+2026-06-10 14:26:01,548 [ConsumerA] INFO – Throughput: 2.6 msg/s | Total consumed: 83
+2026-06-10 14:26:06,867 [ConsumerA] INFO – Throughput: 2.8 msg/s | Total consumed: 98
+2026-06-10 14:26:13,009 [ConsumerA] INFO – Throughput: 2.5 msg/s | Total consumed: 113
+2026-06-10 14:26:18,169 [ConsumerA] INFO – Throughput: 2.9 msg/s | Total consumed: 128
+2026-06-10 14:26:23,256 [ConsumerA] INFO – Throughput: 1.6 msg/s | Total consumed: 136
+2026-06-10 14:26:28,657 [ConsumerA] INFO – Throughput: 3.3 msg/s | Total consumed: 154
+2026-06-10 14:26:34,147 [ConsumerA] INFO – Throughput: 1.8 msg/s | Total consumed: 164
+2026-06-10 14:26:39,410 [ConsumerA] INFO – Throughput: 2.9 msg/s | Total consumed: 179
+2026-06-10 14:26:44,721 [ConsumerA] INFO – Throughput: 1.8 msg/s | Total consumed: 188
+2026-06-10 14:26:49,809 [ConsumerA] INFO – Throughput: 2.4 msg/s | Total consumed: 200
+2026-06-10 14:26:55,060 [ConsumerA] INFO – Throughput: 2.0 msg/s | Total consumed: 210
+2026-06-10 14:27:00,673 [ConsumerA] INFO – Throughput: 2.8 msg/s | Total consumed: 225
+2026-06-10 14:27:06,066 [ConsumerA] INFO – Throughput: 2.1 msg/s | Total consumed: 236
+2026-06-10 14:27:11,655 [ConsumerA] INFO – Throughput: 2.9 msg/s | Total consumed: 252
+2026-06-10 14:27:16,830 [ConsumerA] INFO – Throughput: 2.2 msg/s | Total consumed: 263
+2026-06-10 14:27:22,260 [ConsumerA] INFO – Throughput: 2.8 msg/s | Total consumed: 278
+2026-06-10 14:27:27,499 [ConsumerA] INFO – Throughput: 2.5 msg/s | Total consumed: 291
+2026-06-10 14:27:32,563 [ConsumerA] INFO – Throughput: 3.2 msg/s | Total consumed: 307
+2026-06-10 14:27:37,682 [ConsumerA] INFO – Throughput: 3.4 msg/s | Total consumed: 324
+2026-06-10 14:27:43,477 [ConsumerA] INFO – Throughput: 3.5 msg/s | Total consumed: 344
+2026-06-10 14:27:48,608 [ConsumerA] INFO – Throughput: 3.5 msg/s | Total consumed: 362
+2026-06-10 14:27:53,916 [ConsumerA] INFO – Throughput: 3.4 msg/s | Total consumed: 380
+2026-06-10 14:27:59,397 [ConsumerA] INFO – Throughput: 2.2 msg/s | Total consumed: 392
+2026-06-10 14:28:05,182 [ConsumerA] INFO – Throughput: 2.7 msg/s | Total consumed: 407
+2026-06-10 14:28:10,381 [ConsumerA] INFO – Throughput: 2.3 msg/s | Total consumed: 419
+2026-06-10 14:28:15,447 [ConsumerA] INFO – Throughput: 3.0 msg/s | Total consumed: 434
+2026-06-10 14:28:20,584 [ConsumerA] INFO – Throughput: 2.3 msg/s | Total consumed: 446
+2026-06-10 14:28:26,347 [ConsumerA] INFO – Throughput: 2.1 msg/s | Total consumed: 457
+2026-06-10 14:28:31,555 [ConsumerA] INFO – Throughput: 1.9 msg/s | Total consumed: 467
+2026-06-10 14:28:36,811 [ConsumerA] INFO – Throughput: 2.5 msg/s | Total consumed: 480
+2026-06-10 14:28:41,864 [ConsumerA] INFO – Throughput: 2.6 msg/s | Total consumed: 493
+2026-06-10 14:28:47,015 [ConsumerA] INFO – Throughput: 2.7 msg/s | Total consumed: 507
+2026-06-10 14:28:52,164 [ConsumerA] INFO – Throughput: 3.1 msg/s | Total consumed: 523
+2026-06-10 14:28:58,118 [ConsumerA] INFO – Throughput: 1.4 msg/s | Total consumed: 531
+2026-06-10 14:29:03,578 [ConsumerA] INFO – Throughput: 1.9 msg/s | Total consumed: 541
+2026-06-10 14:29:08,695 [ConsumerA] INFO – Throughput: 1.2 msg/s | Total consumed: 547
+2026-06-10 14:29:13,975 [ConsumerA] INFO – Throughput: 1.9 msg/s | Total consumed: 557
+2026-06-10 14:29:19,337 [ConsumerA] INFO – Throughput: 2.9 msg/s | Total consumed: 572
+2026-06-10 14:29:24,549 [ConsumerA] INFO – Throughput: 1.8 msg/s | Total consumed: 581
+2026-06-10 14:29:29,571 [ConsumerA] INFO – Throughput: 1.8 msg/s | Total consumed: 590
+2026-06-10 14:29:34,675 [ConsumerA] INFO – Throughput: 2.6 msg/s | Total consumed: 603
+2026-06-10 14:29:39,921 [ConsumerA] INFO – Throughput: 2.8 msg/s | Total consumed: 617
+2026-06-10 14:29:45,052 [ConsumerA] INFO – Throughput: 2.0 msg/s | Total consumed: 627
+2026-06-10 14:29:50,369 [ConsumerA] INFO – Throughput: 2.3 msg/s | Total consumed: 639
+2026-06-10 14:29:55,488 [ConsumerA] INFO – Throughput: 2.8 msg/s | Total consumed: 653
+2026-06-10 14:30:00,777 [ConsumerA] INFO – Throughput: 2.7 msg/s | Total consumed: 667
+2026-06-12 20:30:21,565 [ConsumerA] INFO – Health monitor started (PID 22020).
+2026-06-12 20:30:21,568 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-12 20:30:21,592 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:30:21,592 [ConsumerA] INFO – 🛑 Consumer ConsumerA disabled via control file. Shutting down...
+2026-06-12 20:30:21,600 [ConsumerA] INFO – Committing final offsets …
+2026-06-12 20:30:21,601 [ConsumerA] WARNING – Final commit failed: KafkaError{code=_NO_OFFSET,val=-168,str="Commit failed: Local: No offset stored"}
+2026-06-12 20:30:21,603 [ConsumerA] INFO – Consumer closed.
+2026-06-12 20:30:21,605 [ConsumerA] INFO – ─── ConsumerA shut down. Total consumed: 0 ───
+2026-06-12 20:36:18,268 [ConsumerA] INFO – Health monitor started (PID 16876).
+2026-06-12 20:36:18,270 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-12 20:36:18,275 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:37:46,202 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0, 1, 2]
+2026-06-12 20:37:46,365 [ConsumerA] INFO – Throughput: 0.0 msg/s | Total consumed: 1
+2026-06-12 20:37:51,577 [ConsumerA] INFO – Throughput: 23.6 msg/s | Total consumed: 124
+2026-06-12 20:37:56,588 [ConsumerA] INFO – Throughput: 35.0 msg/s | Total consumed: 299
+2026-06-12 20:38:01,603 [ConsumerA] INFO – Throughput: 42.1 msg/s | Total consumed: 510
+2026-06-12 20:38:06,608 [ConsumerA] INFO – Throughput: 42.8 msg/s | Total consumed: 724
+2026-06-12 20:38:11,625 [ConsumerA] INFO – Throughput: 49.0 msg/s | Total consumed: 970
+2026-06-12 20:38:16,632 [ConsumerA] INFO – Throughput: 41.6 msg/s | Total consumed: 1178
+2026-06-12 20:38:21,646 [ConsumerA] INFO – Throughput: 49.7 msg/s | Total consumed: 1427
+2026-06-12 20:38:26,675 [ConsumerA] INFO – Throughput: 44.6 msg/s | Total consumed: 1651
+2026-06-12 20:38:31,691 [ConsumerA] INFO – Throughput: 41.3 msg/s | Total consumed: 1858
+2026-06-12 20:38:36,694 [ConsumerA] INFO – Throughput: 44.2 msg/s | Total consumed: 2079
+2026-06-12 20:38:41,712 [ConsumerA] INFO – Throughput: 38.9 msg/s | Total consumed: 2274
+2026-06-12 20:38:46,743 [ConsumerA] INFO – Throughput: 46.0 msg/s | Total consumed: 2505
+2026-06-12 20:38:51,754 [ConsumerA] INFO – Throughput: 42.5 msg/s | Total consumed: 2718
+2026-06-12 20:38:56,761 [ConsumerA] INFO – Throughput: 37.2 msg/s | Total consumed: 2904
+2026-06-12 20:42:32,702 [ConsumerA] INFO – Health monitor started (PID 20060).
+2026-06-12 20:42:32,705 [ConsumerA] INFO – ► ConsumerA joined consumer group 'user-events-group'
+2026-06-12 20:42:32,712 [ConsumerA] INFO – Subscribed to topic 'user-events'.
+2026-06-12 20:42:35,828 [ConsumerA] INFO – ★ Partition ASSIGNED  → [0, 1, 2]
+2026-06-12 20:42:37,890 [ConsumerA] INFO – Throughput: 8.9 msg/s | Total consumed: 46
+2026-06-12 20:42:42,924 [ConsumerA] INFO – Throughput: 14.5 msg/s | Total consumed: 119
+2026-06-12 20:42:47,952 [ConsumerA] INFO – Throughput: 25.3 msg/s | Total consumed: 246
+2026-06-12 20:42:52,975 [ConsumerA] INFO – Throughput: 43.3 msg/s | Total consumed: 463
+2026-06-12 20:42:58,003 [ConsumerA] INFO – Throughput: 48.2 msg/s | Total consumed: 705
+2026-06-12 20:43:03,021 [ConsumerA] INFO – Throughput: 48.9 msg/s | Total consumed: 950
+2026-06-12 20:43:08,045 [ConsumerA] INFO – Throughput: 55.2 msg/s | Total consumed: 1227
+2026-06-12 20:43:13,064 [ConsumerA] INFO – Throughput: 43.9 msg/s | Total consumed: 1447
+2026-06-12 20:43:18,076 [ConsumerA] INFO – Throughput: 50.2 msg/s | Total consumed: 1698
+2026-06-12 20:43:23,101 [ConsumerA] INFO – Throughput: 36.9 msg/s | Total consumed: 1883
